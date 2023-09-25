@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PropertyController;
-use App\Http\Controllers\PropiedadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +22,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/* Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
+Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
+Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store'); */
+
+
+Route::resource('properties', PropertyController::class);
