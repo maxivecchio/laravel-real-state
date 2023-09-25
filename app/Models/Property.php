@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'title',
         'description',
@@ -16,11 +17,15 @@ class Property extends Model
         'bedrooms',
         'bathrooms',
         'size',
-        'type',
-        'status',
         'image_path',
-        'owner_id'
+        'owner_id',
+        'status_id'
     ];
+
+    public function status()
+    {
+        return $this->belongsTo(PropertyStatus::class, 'status_id');
+    }
 
     public function owner()
     {

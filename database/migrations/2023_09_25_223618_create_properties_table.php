@@ -4,14 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePropertiesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
@@ -21,23 +19,21 @@ class CreatePropertiesTable extends Migration
             $table->string('location');
             $table->integer('bedrooms');
             $table->integer('bathrooms');
-            $table->decimal('size', 15, 2); 
-            $table->string('type');
-            $table->string('status');
+            $table->decimal('size', 15, 2);
             $table->string('image_path')->nullable();
             $table->unsignedBigInteger('owner_id');
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')->references('id')->on('property_statuses');
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down(): void
     {
         Schema::dropIfExists('properties');
     }
-}
+};
