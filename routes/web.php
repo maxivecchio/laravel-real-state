@@ -23,9 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/* Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
+Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
 Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
-Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store'); */
-
-
-Route::resource('properties', PropertyController::class);
+Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
+Route::delete('/properties/{id}', [PropertyController::class, 'deleteProperty'])->name('properties.deleteProperty');
+/* Route::resource('properties', PropertyController::class); */

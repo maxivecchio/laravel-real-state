@@ -12,9 +12,9 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        $properties = Property::all();
+        return view('properties.index', ['properties' => $properties]);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -40,13 +40,13 @@ class PropertyController extends Controller
             'owner_id' => 'required|integer',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
+
         if ($request->hasFile('image')) {
             $data['image_path'] = $request->file('image')->store('properties', 'public');
         }
-    
+
         Property::create($data);
-    
+
         return redirect()->route('properties.index')->with('success', 'Property created successfully.');
     }
 
@@ -74,11 +74,12 @@ class PropertyController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function deleteProperty($id)
     {
-        //
+        $property = Property::findOrFail($id);
+        $property->delete();
+
+        return redirect()->route('properties.index')->with('success', 'La propiedad ha sido eliminada correctamente.');
     }
+
 }
