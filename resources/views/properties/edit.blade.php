@@ -25,9 +25,6 @@
     <label for="size">Size</label>
     <input type="text" name="size" id="size" value="{{ $property->size }}" required>
 
-    <label for="type">Type</label>
-    <input type="text" name="type" id="type" value="{{ $property->type }}" required>
-
     <label for="status">Status</label>
     <input type="text" name="status" id="status" value="{{ $property->status }}" required>
 
