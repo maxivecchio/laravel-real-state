@@ -7,6 +7,7 @@ use App\Models\Property;
 
 class PropertyController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */

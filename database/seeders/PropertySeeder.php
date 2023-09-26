@@ -13,7 +13,7 @@ class PropertySeeder extends Seeder
     public function run()
     {
         \App\Models\Property::factory()
-            ->count(5)
+            ->count(15)
             ->create();
     }
 
