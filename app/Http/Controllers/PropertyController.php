@@ -59,20 +59,16 @@ class PropertyController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(Property $property)
     {
-        //
+        return view('properties.edit', compact('property'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Property $property)
     {
-        //
+        $property->update($request->all());
+
+        return redirect()->route('properties.index')->with('success', 'Property updated successfully');
     }
 
     public function deleteProperty($id)

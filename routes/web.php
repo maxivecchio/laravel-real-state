@@ -27,4 +27,6 @@ Route::get('/properties', [PropertyController::class, 'index'])->name('propertie
 Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
 Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
 Route::delete('/properties/{id}', [PropertyController::class, 'deleteProperty'])->name('properties.deleteProperty');
-/* Route::resource('properties', PropertyController::class); */
+
+Route::get('/properties/{property}', [PropertyController::class, 'edit'])->name('properties.edit');
+Route::put('/properties/{property}', [PropertyController::class, 'update'])->name('properties.update');

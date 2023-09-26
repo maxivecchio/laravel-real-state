@@ -12,6 +12,7 @@
                         @method('DELETE')
                         <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta propiedad?')">Delete</button>
                     </form>
+                    <a href="{{ route('properties.edit', $property) }}">Edit</a>
                 </li>
             @endforeach
         </ul>
