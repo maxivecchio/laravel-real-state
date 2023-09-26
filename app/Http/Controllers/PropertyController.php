@@ -8,56 +8,39 @@ use App\Models\Property;
 class PropertyController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $properties = Property::all();
         return view('properties.index', ['properties' => $properties]);
     }
-    /**
-     * Show the form for creating a new resource.
-     */
+
+
     public function create()
     {
         return view('properties.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'location' => 'required|string',
-            'bedrooms' => 'required|integer',
-            'bathrooms' => 'required|integer',
-            'size' => 'required|numeric',
-            'status_id' => 'required|integer',
-            'owner_id' => 'required|integer',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        if ($request->hasFile('image')) {
-            $data['image_path'] = $request->file('image')->store('properties', 'public');
-        }
-
-        Property::create($data);
-
-        return redirect()->route('properties.index')->with('success', 'Property created successfully.');
+        $validatedData = [
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'location' => $request->input('location'),
+            'bedrooms' => $request->input('bedrooms'),
+            'bathrooms' => $request->input('bathrooms'),
+            'size' => $request->input('size'),
+            'status_id' => $request->input('status_id'),
+            'image_path' => $request->input('image_path'),
+            'owner_id' => 4
+            
+        ];
+        $property = new Property($validatedData);
+        $property->save();
+    
+        return redirect()->route('properties.index');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    
 
     public function edit(Property $property)
     {

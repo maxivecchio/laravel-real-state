@@ -15,9 +15,19 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <a href="{{ route('properties.create') }}">Create Property</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @endsection
