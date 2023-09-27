@@ -54,7 +54,7 @@ class PropertyController extends Controller
         return redirect()->route('properties.index')->with('success', 'Property updated successfully');
     }
 
-    public function deleteProperty($id)
+    public function destroy($id)
     {
         $property = Property::findOrFail($id);
         $property->delete();
