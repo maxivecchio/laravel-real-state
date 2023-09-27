@@ -2,17 +2,17 @@
 
 @section('content')
     <div class="container">
-        <h1>Properties</h1>
+        <h1>news</h1>
         <ul>
-            @foreach ($properties as $property)
+            @foreach ($news as $new)
                 <li>
-                    {{ $property->title }}
-                    <form method="POST" action="{{ route('properties.destroy', $property->id) }}" style="display: inline;">
+                    {{ $new->title }}
+                    <form method="POST" action="{{ route('news.destroy', $new->id) }}" style="display: inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta propiedad?')">Delete</button>
                     </form>
-                    <a href="{{ route('properties.edit', $property) }}">Edit</a>
+                    <a href="{{ route('news.edit', $new) }}">Edit</a>
                 </li>
             @endforeach
         </ul>

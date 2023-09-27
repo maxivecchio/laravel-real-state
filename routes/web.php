@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,12 @@ Route::get('/properties/{property}', [PropertyController::class, 'edit'])->name(
 Route::put('/properties/{property}', [PropertyController::class, 'update'])->name('properties.update');
 
 
-Route::delete('/properties/{id}', [PropertyController::class, 'deleteProperty'])->name('properties.deleteProperty');
+Route::delete('/properties/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
+
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+
+Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+Route::get('/news/{property}', [NewsController::class, 'edit'])->name('news.edit');
+Route::put('/news/{property}', [NewsController::class, 'update'])->name('news.update');
