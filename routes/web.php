@@ -35,10 +35,10 @@ Route::put('/properties/{property}', [PropertyController::class, 'update'])->nam
 
 Route::delete('/properties/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
 
-Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+
+Route::get('/news', [NewsController::class, 'index'])->name('news.index')->middleware('checkRole:admin');
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::post('/news', [NewsController::class, 'store'])->name('news.store');
-
 Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 Route::get('/news/{property}', [NewsController::class, 'edit'])->name('news.edit');
 Route::put('/news/{property}', [NewsController::class, 'update'])->name('news.update');
