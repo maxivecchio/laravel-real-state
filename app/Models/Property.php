@@ -14,9 +14,9 @@ class Property extends Model
         'title',
         'description',
         'price',
-        'location',
+/*         'location',
         'bedrooms',
-        'bathrooms',
+        'bathrooms', */
         'size',
         'image_path',
         'owner_id',
