@@ -37,12 +37,16 @@ class NewsController extends Controller
     }
 
 
-    public function edit(Property $property)
+    public function edit(News $news)
     {
+        return view('news.edit', compact('news'));
     }
 
-    public function update(Request $request, Property $property)
+    public function update(Request $request, News $news)
     {
+        $news->update($request->all());
+
+        return redirect()->route('news.index')->with('success', 'La news ha sido actualizada correctamente.');
     }
 
     public function destroy($id)

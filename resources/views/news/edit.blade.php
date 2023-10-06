@@ -1,35 +1,42 @@
-<h1>Edit Property</h1>
+@extends('layouts.app')
 
-<form method="POST" action="{{ route('properties.update', $property) }}">
-    @csrf
-    @method('PUT')
+@section('content')
+<div class="container">
+    <h1>Edit news</h1>
 
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" value="{{ $property->title }}" required>
+    <form method="POST" action="{{ route('news.update', $news) }}">
+        @csrf
+        @method('PUT')
 
-    <label for="description">Description</label>
-    <textarea name="description" id="description" rows="4" required>{{ $property->description }}</textarea>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ $news->title }}" required>
+        </div>
 
-    <label for="price">Price</label>
-    <input type="text" name="price" id="price" value="{{ $property->price }}" required>
+        <div class="mb-3">
+            <label for="subtitle" class="form-label">subtitle</label>
+            <input class="form-control" id="subtitle" name="subtitle" value="{{ $news->subtitle }}" rows="4" required>
+        </div>
 
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location" value="{{ $property->location }}" required>
+        <div class="mb-3">
+            <label for="body" class="form-label">body</label>
+            <input type="text" class="form-control" id="body" name="body" value="{{ $news->body }}" required>
+        </div>
 
-    <label for="bedrooms">Bedrooms</label>
-    <input type="number" name="bedrooms" id="bedrooms" value="{{ $property->bedrooms }}" required>
+        <div class="mb-3">
+            <label for="author" class="form-label">author</label>
+            <input type="text" class="form-control" id="author" name="author" value="{{ $news->author }}" required>
+        </div>
 
-    <label for="bathrooms">Bathrooms</label>
-    <input type="number" name="bathrooms" id="bathrooms" value="{{ $property->bathrooms }}" required>
+        <div class="mb-3">
+            <label for="display" class="form-label">display</label>
+            <select class="form-control" id="display" name="display" value="{{ $news->display }}">
+                <option value="1">true</option>
+                <option value="0">false</option>
+            </select>
+        </div>
 
-    <label for="size">Size</label>
-    <input type="text" name="size" id="size" value="{{ $property->size }}" required>
-
-    <label for="status">Status</label>
-    <input type="text" name="status" id="status" value="{{ $property->status }}" required>
-
-    <label for="image_path">Image Path</label>
-    <input type="text" name="image_path" id="image_path" value="{{ $property->image_path }}" required>
-
-    <button type="submit">Update Property</button>
-</form>
+        <button type="submit" class="btn btn-primary">Update news</button>
+    </form>
+</div>
+@endsection

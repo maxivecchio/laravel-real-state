@@ -40,6 +40,6 @@ Route::delete('/properties/{id}', [PropertyController::class, 'destroy'])->name(
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/news', [NewsController::class, 'store'])->name('news.store');
     Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
-    Route::get('/news/{property}', [NewsController::class, 'edit'])->name('news.edit');
-    Route::put('/news/{property}', [NewsController::class, 'update'])->name('news.update');
+    Route::get('/news/{news}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('/news/{news}', [NewsController::class, 'update'])->name('news.update');
 /* }); */
