@@ -1,15 +1,11 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePropertyCharacteristicsTable extends Migration
+return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('property_characteristics', function (Blueprint $table) {
@@ -22,10 +18,6 @@ class CreatePropertyCharacteristicsTable extends Migration
             $table->integer('office')->default(0);
             $table->boolean('has_garage')->default(false);
             $table->integer('floors')->nullable();
-            $table->boolean('has_laundry_room')->default(false);
-            $table->boolean('has_dining_room')->default(false);
-            $table->boolean('has_game_room')->default(false);
-            $table->boolean('has_home_office')->default(false);
         });
     }
 
@@ -38,5 +30,4 @@ class CreatePropertyCharacteristicsTable extends Migration
     {
         Schema::dropIfExists('property_characteristics');
     }
-}
-
+};
