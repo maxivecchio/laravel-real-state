@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
+            $table->string('type')->default('');
             $table->decimal('price', 15, 2);
-            $table->string('address');
-            $table->string('country');
-            $table->integer('zipcode');
-            $table->string('state');
+            $table->string('country')->default('');
+            $table->string('state')->default('');
+            $table->string('address')->default('');
+            $table->string('city')->default('');
+            $table->integer('zipcode')->default(111);
             $table->integer('kitchen')->default(0);
             $table->integer('bedroom')->default(0);
             $table->integer('bathroom')->default(0);
@@ -28,8 +28,8 @@ return new class extends Migration
             $table->integer('floors')->default(0);
             $table->decimal('size', 15, 2);
             $table->string('image_path')->nullable();
-            $table->unsignedBigInteger('owner_id');
-            $table->unsignedBigInteger('status_id');
+            $table->unsignedBigInteger('owner_id')->nullable();
+            $table->unsignedBigInteger('status_id')->nullable();
             $table->timestamps();
         });
     }
