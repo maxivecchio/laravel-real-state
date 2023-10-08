@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PropertiesImport;
 
 class PropertyController extends Controller
 {
@@ -42,15 +44,22 @@ class PropertyController extends Controller
             'status_id' => $request->input('status_id'),
             'image_path' => $request->input('image_path'),
             'owner_id' => 4
-            
+
         ];
         $property = new Property($validatedData);
         $property->save();
-    
+
         return redirect()->route('properties.index');
     }
-    
 
+    public function uploadProperties()
+    {
+        $csvFileUrl = 'http://127.0.0.1:8000/uploads/data.csv';
+
+        Excel::import(new PropertiesImport, $csvFileUrl);
+
+        return redirect()->route('properties.index')->with('success', 'Properties uploaded successfully.');
+    }
     public function edit(Property $property)
     {
         return view('properties.edit', compact('property'));
