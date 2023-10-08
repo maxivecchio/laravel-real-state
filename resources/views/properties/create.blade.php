@@ -1,63 +1,94 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Add New Property</h1>
+    <div class="container">
+        <h1>Add New Property</h1>
 
-    <form action="{{ route('properties.store') }}" method="post" enctype="multipart/form-data">
-        @csrf
+        <form action="{{ route('properties.store') }}" method="post" enctype="multipart/form-data">
+            @csrf
 
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-        </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
-        </div>
+            <hr />
 
-        <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input type="number" class="form-control" id="price" name="price" required>
-        </div>
+            <div class="mb-3">
+                <label for="bedroom" class="form-label">Bedrooms</label>
+                <input type="number" class="form-control" id="bedroom" name="bedroom" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="location" name="location" required>
-        </div>
+            <div class="mb-3">
+                <label for="bathroom" class="form-label">Bathrooms</label>
+                <input type="number" class="form-control" id="bathroom" name="bathroom" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="bedrooms" class="form-label">Bedrooms</label>
-            <input type="number" class="form-control" id="bedrooms" name="bedrooms" required>
-        </div>
+            <div class="mb-3">
+                <label for="kitchen" class="form-label">kitchens</label>
+                <input type="number" class="form-control" id="kitchen" name="kitchen" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="bathrooms" class="form-label">Bathrooms</label>
-            <input type="number" class="form-control" id="bathrooms" name="bathrooms" required>
-        </div>
+            <div class="mb-3">
+                <label for="office" class="form-label">offices</label>
+                <input type="number" class="form-control" id="office" name="office" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="size" class="form-label">Size (sqm)</label>
-            <input type="number" class="form-control" id="size" name="size" required>
-        </div>
+            <div class="mb-3">
+                <label for="garage" class="form-label">garages</label>
+                <input type="number" class="form-control" id="garage" name="garage" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="status_id" class="form-label">Status</label>
-            <select class="form-control" id="status_id" name="status_id">
-                <option value="1">Purchased</option>
-                <option value="2">For Rent</option>
-                <option value="3">To Buy</option>
-                <option value="4">For Sale</option>
-            </select>
-        </div>
+            <div class="mb-3">
+                <label for="floors" class="form-label">floors</label>
+                <input type="number" class="form-control" id="floors" name="floors" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image" name="image">
-        </div>
+            <hr />
 
-        <button type="submit" class="btn btn-primary">Add Property</button>
-    </form>
-</div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="city" class="form-label">city</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="type" class="form-label">type</label>
+                <input type="text" class="form-control" id="type" name="type" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" name="country" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="zipcode" class="form-label">Zipcodes</label>
+                <input type="number" class="form-control" id="zipcode" name="zipcode" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="state" class="form-label">state</label>
+                <input type="text" class="form-control" id="state" name="state" required>
+            </div>
+
+            <hr />
+
+            <div class="mb-3">
+                <label for="size" class="form-label">Size (sqm)</label>
+                <input type="number" class="form-control" id="size" name="size" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Property</button>
+        </form>
+    </div>
 @endsection

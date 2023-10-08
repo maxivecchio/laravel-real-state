@@ -1,35 +1,109 @@
-<h1>Edit Property</h1>
+@extends('layouts.app')
 
-<form method="POST" action="{{ route('properties.update', $property) }}">
-    @csrf
-    @method('PUT')
+@section('content')
+    <div class="container">
+        <h1>Edit Property</h1>
 
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" value="{{ $property->title }}" required>
+        <form method="POST" action="{{ route('properties.update', $property) }}" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
-    <label for="description">Description</label>
-    <textarea name="description" id="description" rows="4" required>{{ $property->description }}</textarea>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" value="{{ $property->price }}"
+                    required>
+            </div>
 
-    <label for="price">Price</label>
-    <input type="text" name="price" id="price" value="{{ $property->price }}" required>
+            <hr />
 
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location" value="{{ $property->location }}" required>
+            <div class="mb-3">
+                <label for="bedroom" class="form-label">Bedrooms</label>
+                <input type="number" class="form-control" id="bedroom" name="bedroom" value="{{ $property->bedroom }}"
+                    required>
+            </div>
 
-    <label for="bedrooms">Bedrooms</label>
-    <input type="number" name="bedrooms" id="bedrooms" value="{{ $property->bedrooms }}" required>
+            <div class="mb-3">
+                <label for="bathroom" class="form-label">Bathrooms</label>
+                <input type="number" class="form-control" id="bathroom" name="bathroom" value="{{ $property->bathroom }}"
+                    required>
+            </div>
 
-    <label for="bathrooms">Bathrooms</label>
-    <input type="number" name="bathrooms" id="bathrooms" value="{{ $property->bathrooms }}" required>
+            <div class="mb-3">
+                <label for="kitchen" class="form-label">Kitchens</label>
+                <input type="number" class="form-control" id="kitchen" name="kitchen" value="{{ $property->kitchen }}"
+                    required>
+            </div>
 
-    <label for="size">Size</label>
-    <input type="text" name="size" id="size" value="{{ $property->size }}" required>
+            <div class="mb-3">
+                <label for="office" class="form-label">Offices</label>
+                <input type="number" class="form-control" id="office" name="office" value="{{ $property->office }}"
+                    required>
+            </div>
 
-    <label for="status">Status</label>
-    <input type="text" name="status" id="status" value="{{ $property->status }}" required>
+            <div class="mb-3">
+                <label for="garage" class="form-label">Garages</label>
+                <input type="number" class="form-control" id="garage" name="garage" value="{{ $property->garage }}"
+                    required>
+            </div>
 
-    <label for="image_path">Image Path</label>
-    <input type="text" name="image_path" id="image_path" value="{{ $property->image_path }}" required>
+            <div class="mb-3">
+                <label for="floors" class="form-label">Floors</label>
+                <input type="number" class="form-control" id="floors" name="floors" value="{{ $property->floors }}"
+                    required>
+            </div>
 
-    <button type="submit">Update Property</button>
-</form>
+            <hr />
+
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ $property->address }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="city" class="form-label">city</label>
+                <input type="text" class="form-control" id="city" name="city" value="{{ $property->city }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="city" class="form-label">city</label>
+                <input type="text" class="form-control" id="city" name="city" value="{{ $property->city }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="type" class="form-label">type</label>
+                <input type="text" class="form-control" id="type" name="type" value="{{ $property->type }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="zipcode" class="form-label">Zipcodes</label>
+                <input type="number" class="form-control" id="zipcode" name="zipcode" value="{{ $property->zipcode }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" id="state" name="state" value="{{ $property->state }}"
+                    required>
+            </div>
+
+            <hr />
+
+            <div class="mb-3">
+                <label for="size" class="form-label">Size (sqm)</label>
+                <input type="number" class="form-control" id="size" name="size" value="{{ $property->size }}"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Property</button>
+        </form>
+    </div>
+@endsection
