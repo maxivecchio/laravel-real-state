@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PropertiesImport;
 
 class PropertyController extends Controller
 {
@@ -23,15 +25,13 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         $validatedData = [
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
+            'type' => $request->input('type'),
             'price' => $request->input('price'),
-            'address' => $request->input('address'),
             'country' => $request->input('country'),
-            'zipcode' => $request->input('zipcode'),
             'state' => $request->input('state'),
-            'bedrooms' => $request->input('bedrooms'),
-            'bathrooms' => $request->input('bathrooms'),
+            'city' => $request->input('city'),
+            'address' => $request->input('address'),
+            'zipcode' => $request->input('zipcode'),
             'kitchen' => $request->input('kitchen'),
             'bedroom' => $request->input('bedroom'),
             'bathroom' => $request->input('bathroom'),
@@ -39,18 +39,24 @@ class PropertyController extends Controller
             'garage' => $request->input('garage'),
             'floors' => $request->input('floors'),
             'size' => $request->input('size'),
-            'status_id' => $request->input('status_id'),
             'image_path' => $request->input('image_path'),
             'owner_id' => 4
-            
+
         ];
         $property = new Property($validatedData);
         $property->save();
-    
+
         return redirect()->route('properties.index');
     }
-    
 
+    public function uploadProperties()
+    {
+        $csvFileUrl = 'http://127.0.0.1:8000/uploads/data.csv';
+
+        Excel::import(new PropertiesImport, $csvFileUrl);
+
+        return redirect()->route('properties.index')->with('success', 'Properties uploaded successfully.');
+    }
     public function edit(Property $property)
     {
         return view('properties.edit', compact('property'));

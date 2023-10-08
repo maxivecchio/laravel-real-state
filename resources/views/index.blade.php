@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('/css/aos.css')}}" >
     <link rel="stylesheet" href="{{asset('/css/style.css')}}" >
 
-	<title>Property &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
+	<title>State</title>
 </head>
 <body>
 
@@ -424,107 +424,6 @@
 	</section>
 
 
-
-	<div class="section sec-testimonials">
-		<div class="container">
-			<div class="row mb-5 align-items-center">
-				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">Customer Says</h2>
-				</div>
-				<div class="col-md-6 text-md-end">
-					<div id="testimonial-nav">
-						<span class="prev" data-controls="prev">Prev</span>
-						
-						<span class="next" data-controls="next">Next</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4">
-					
-				</div>
-			</div>
-			<div class="testimonial-slider-wrap">
-				<div class="testimonial-slider">
-					<div class="item">
-						<div class="testimonial">
-							<img src="images/person_1-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
-							<div class="rate">
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-							</div>
-							<h3 class="h5 text-primary mb-4">James Smith</h3>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-							<p class="text-black-50">Designer, Co-founder</p>
-						</div>
-					</div>
-
-					<div class="item">
-						<div class="testimonial">
-							<img src="images/person_2-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
-							<div class="rate">
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-							</div>
-							<h3 class="h5 text-primary mb-4">Mike Houston</h3>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-							<p class="text-black-50">Designer, Co-founder</p>
-						</div>
-					</div>
-
-					<div class="item">
-						<div class="testimonial">
-							<img src="images/person_3-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
-							<div class="rate">
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-							</div>
-							<h3 class="h5 text-primary mb-4">Cameron Webster</h3>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-							<p class="text-black-50">Designer, Co-founder</p>
-						</div>
-					</div>
-
-					<div class="item">
-						<div class="testimonial">
-							<img src="images/person_4-min.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
-							<div class="rate">
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-								<span class="icon-star text-warning"></span>
-							</div>
-							<h3 class="h5 text-primary mb-4">Dave Smith</h3>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-							<p class="text-black-50">Designer, Co-founder</p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
 	<div class="section section-4 bg-light">
 		<div class="container">
 			<div class="row justify-content-center  text-center mb-5">
@@ -600,87 +499,6 @@
 		</div>
 	</div>
 
-	<div class="section">
-		<div class="row justify-content-center footer-cta" data-aos="fade-up">
-			<div class="col-lg-7 mx-auto text-center">
-				<h2 class="mb-4 ">Be a part of our growing real state agents</h2>
-				<p><a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">Apply for Real Estate agent</a></p>
-			</div> <!-- /.col-lg-7 -->
-		</div> <!-- /.row -->
-	</div>
-
-	<div class="section section-5 bg-light">
-		<div class="container">
-			<div class="row justify-content-center  text-center mb-5">
-				<div class="col-lg-6 mb-5">
-					<h2 class="font-weight-bold heading text-primary mb-4">Our Agents</h2>
-					<p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam enim pariatur similique debitis vel nisi qui reprehenderit totam? Quod maiores.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="h-100 person">
-
-						<img src="images/person_1-min.jpg" alt="Image"
-						class="img-fluid">
-
-						<div class="person-contents">
-							<h2 class="mb-0"><a href="#">James Doe</a></h2>
-							<span class="meta d-block mb-3">Real Estate Agent</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
-							<ul class="social list-unstyled list-inline dark-hover">
-								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-instagram"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="h-100 person">
-
-						<img src="images/person_2-min.jpg" alt="Image"
-						class="img-fluid">
-
-						<div class="person-contents">
-							<h2 class="mb-0"><a href="#">Jean Smith</a></h2>
-							<span class="meta d-block mb-3">Real Estate Agent</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
-							<ul class="social list-unstyled list-inline dark-hover">
-								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-instagram"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="h-100 person">
-
-						<img src="images/person_3-min.jpg" alt="Image"
-						class="img-fluid">
-
-						<div class="person-contents">
-							<h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
-							<span class="meta d-block mb-3">Real Estate Agent</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
-							<ul class="social list-unstyled list-inline dark-hover">
-								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-instagram"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div class="site-footer">
 		<div class="container">
