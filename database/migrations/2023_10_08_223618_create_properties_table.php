@@ -16,14 +16,20 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->decimal('price', 15, 2);
-            $table->string('location');
-            $table->integer('bedrooms');
-            $table->integer('bathrooms');
+            $table->string('address');
+            $table->string('country');
+            $table->integer('zipcode');
+            $table->string('state');
+            $table->integer('kitchen')->default(0);
+            $table->integer('bedroom')->default(0);
+            $table->integer('bathroom')->default(0);
+            $table->integer('office')->default(0);
+            $table->integer('garage')->default(0);
+            $table->integer('floors')->default(0);
             $table->decimal('size', 15, 2);
             $table->string('image_path')->nullable();
             $table->unsignedBigInteger('owner_id');
             $table->unsignedBigInteger('status_id');
-            $table->foreign('status_id')->references('id')->on('property_statuses');
             $table->timestamps();
         });
     }
