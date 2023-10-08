@@ -44,4 +44,4 @@ Route::delete('/properties/{id}', [PropertyController::class, 'destroy'])->name(
     Route::put('/news/{news}', [NewsController::class, 'update'])->name('news.update');
 /* }); */
 
-Route::post('/properties/upload', 'PropertyController@uploadProperties')->name('properties.upload');
+Route::get('/upload-csv', [PropertyController::class, 'uploadCSV']);

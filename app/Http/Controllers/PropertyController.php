@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\PropertiesImport;
 
 class PropertyController extends Controller
 {
@@ -49,13 +47,36 @@ class PropertyController extends Controller
         return redirect()->route('properties.index');
     }
 
-    public function uploadProperties()
+    public function uploadCSV()
     {
-        $csvFileUrl = 'http://127.0.0.1:8000/uploads/data.csv';
+        $csvFilePath = public_path('uploads/data.csv');
 
-        Excel::import(new PropertiesImport, $csvFileUrl);
+        $csvData = file_get_contents($csvFilePath);
 
-        return redirect()->route('properties.index')->with('success', 'Properties uploaded successfully.');
+        $rows = explode("\n", trim($csvData));
+        foreach ($rows as $row) {
+            $columns = str_getcsv($row, ","); 
+            $propertyData = [
+                'type' => $columns[0],
+                'price' => intval($columns[1]),
+                'country' => $columns[2],
+                'state' => $columns[3],
+                'addressCity' => $columns[4],
+                'address' => $columns[5],
+                'zipcode' => intval($columns[6]),
+                'kitchen' => intval($columns[7]),
+                'bedroom' => intval($columns[8]),
+                'bathroom' => intval($columns[9]),
+                'office' => intval($columns[10]),
+                'garage' => intval($columns[11]),
+                'floors' => intval($columns[12]),
+                'size' => intval($columns[13]),
+                'image_path' => $columns[14],
+            ];
+            $property = new Property($propertyData);
+            $property->save();
+        }
+        return redirect()->route('properties.index');
     }
     public function edit(Property $property)
     {
