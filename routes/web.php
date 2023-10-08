@@ -43,3 +43,5 @@ Route::delete('/properties/{id}', [PropertyController::class, 'destroy'])->name(
     Route::get('/news/{news}', [NewsController::class, 'edit'])->name('news.edit');
     Route::put('/news/{news}', [NewsController::class, 'update'])->name('news.update');
 /* }); */
+
+Route::post('/properties/upload', 'PropertyController@uploadProperties')->name('properties.upload');
