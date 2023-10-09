@@ -14,6 +14,12 @@ class NewsController extends Controller
         return view('dashboard.news.index', ['news' => $news]);
     }
 
+    public function indexPublic()
+    {
+        $news = News::all();
+        return view('news.index', ['news' => $news]);
+    }
+
 
     public function create()
     {

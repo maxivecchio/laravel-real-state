@@ -52,3 +52,5 @@ Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy
 
 Route::get('/upload-csv', [PropertyController::class, 'uploadCSV']);
 
+Route::get('/news', [NewsController::class, 'indexPublic'])->name('news.index');
+Route::get('/news/{id}', [NewsController::class, 'indexPublic'])->name('news.single');
