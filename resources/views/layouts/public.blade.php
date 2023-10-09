@@ -20,8 +20,10 @@
 
     <link rel="stylesheet" href="{{asset('/css/tiny-slider.css')}}" >
     <link rel="stylesheet" href="{{asset('/css/aos.css')}}" >
+	<link rel="stylesheet" href="{{asset('/css/style2.css')}}" >
     <link rel="stylesheet" href="{{asset('/css/style.css')}}" >
 	<link rel="stylesheet" href="{{asset('/css/index.css')}}" >
+	
 
 	<title>State</title>
 </head>
