@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/blog', function () {
+    return view('blog');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -47,3 +51,4 @@ Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy
 /* }); */
 
 Route::get('/upload-csv', [PropertyController::class, 'uploadCSV']);
+
