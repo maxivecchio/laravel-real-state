@@ -24,7 +24,8 @@
                         @endif
 
                         {{ __('You are logged in!') }}
-                        <a href="{{ route('properties.create') }}">Create Property</a>
+                        <a href="{{ route('properties.index') }}">Manage Properties</a>
+                        <a href="{{ route('news.index') }}">Manage News</a>
                     </div>
                 </div>
             </div>
