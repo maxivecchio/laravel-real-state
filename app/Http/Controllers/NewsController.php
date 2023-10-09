@@ -22,18 +22,12 @@ class NewsController extends Controller
 
     public function getNews($id)
     {
-      
         $news = News::find($id);
-
-        
         if (!$news) {
             abort(404); 
         }
-
-     
         return view('news.single', ['news' => $news]);
     }
-
 
     public function create()
     {
