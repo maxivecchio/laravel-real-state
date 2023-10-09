@@ -21,15 +21,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/blog', function () {
-    return view('blog');
-});
-
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.index');
-
-Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties.index');
 
 /* Route::middleware(['role:admin'])->group(function () { */
     Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('properties.index');
@@ -50,6 +44,9 @@ Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('pro
     
 /* }); */
 
+
+Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties.index');
+Route::get('/properties/{id}', [PropertyController::class, 'getProperty'])->name('properties.single');
 
 Route::get('/news', [NewsController::class, 'indexPublic'])->name('news.index');
 Route::get('/news/{id}', [NewsController::class, 'getNews'])->name('news.single');
