@@ -29,7 +29,7 @@ Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.index');
 
-Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties');
+Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties.index');
 
 /* Route::middleware(['role:admin'])->group(function () { */
     Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('properties.index');

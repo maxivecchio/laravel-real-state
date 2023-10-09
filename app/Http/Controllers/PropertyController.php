@@ -17,9 +17,14 @@ class PropertyController extends Controller
     public function indexPublic()
     {
         $properties = Property::all();
-        return view('properties', ['properties' => $properties]);
+        return view('properties.index', ['properties' => $properties]);
     }
 
+    public function popularProperties()
+    {
+        $properties = Property::inRandomOrder()->take(6)->get();
+        return view('dashboard.properties.index', ['properties' => $properties]);
+    }
 
     public function create()
     {
@@ -61,7 +66,7 @@ class PropertyController extends Controller
 
         $rows = explode("\n", trim($csvData));
         foreach ($rows as $row) {
-            $columns = str_getcsv($row, ","); 
+            $columns = str_getcsv($row, ",");
             $propertyData = [
                 'type' => $columns[0],
                 'price' => intval($columns[1]),
