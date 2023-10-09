@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('/search', [SearchController::class, 'index']);
+Route::post('/search', [SearchController::class, 'search']);
 
 Auth::routes();
 

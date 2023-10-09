@@ -1,3 +1,46 @@
-.margenArriba {
+.marginTop {
     margin-top: 140px;
+}
+
+
+/* Styles */
+
+.manageButton, .editPropertyButton, .deletePropertyButton, .createPropertyButton{
+    transition: all ease .3s;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #005555;
+    text-align: center;
+    color: white;
+    /* display: block; */
+    margin-bottom: 10px;
+}
+.manageButton:hover, .editPropertyButton:hover{
+    background-color: #008080;
+    color: white;
+}
+.createPropertyButton{
+    margin: 30px 0;
+}
+.editPropertyButton, .deletePropertyButton, .createPropertyButton{
+    padding: 8px;
+    height: auto;
+    outline: 0;
+}
+.deletePropertyButton, .createPropertyButton{
+    border: 2px solid #005555;
+    background-color: transparent;
+    color: #005555;
+    box-sizing: border-box;    
+}
+.deletePropertyButton:hover, .createPropertyButton:hover{
+    border: 2px solid #008080;
+    background-color: transparent;
+    color: #008080;
+    box-sizing: border-box;    
 }
