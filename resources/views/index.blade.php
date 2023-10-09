@@ -19,7 +19,7 @@
                         data-aos-delay="200">
                         @csrf
                         <input type="search" name="city" class="form-control px-4"
-                            placeholder="Your ZIP code or City. e.g. New York">
+                            placeholder="Enter city">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                 </div>
