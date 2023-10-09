@@ -1,3 +1,6 @@
+@extends('layouts.public')
+
+@section('content')
 
 	<div class="hero">
 
@@ -426,3 +429,5 @@
 		</div>
 	</div>
 
+
+@endsection
