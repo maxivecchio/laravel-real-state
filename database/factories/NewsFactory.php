@@ -21,6 +21,7 @@ class NewsFactory extends Factory
             'subtitle' => $this->faker->words(11, true),
             'body' => $this->faker->paragraph,
             'author' => $this->faker->words(2, true),
+            'category' => $this->faker->words(2, true),
             'display' => $this->faker->boolean(),
             'image_path' => $this->faker->imageUrl(),
         ];
