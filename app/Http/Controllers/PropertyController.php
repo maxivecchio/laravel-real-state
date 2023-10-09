@@ -20,6 +20,15 @@ class PropertyController extends Controller
         return view('properties.index', ['properties' => $properties]);
     }
 
+    public function getProperty($id)
+    {
+        $propertiy = Property::find($id);
+        if (!$propertiy) {
+            abort(404);
+        }
+        return view('properties.single', ['news' => $propertiy]);
+    }
+
     public function popularProperties()
     {
         $properties = Property::inRandomOrder()->take(6)->get();

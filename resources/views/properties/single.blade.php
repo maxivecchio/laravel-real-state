@@ -3,122 +3,103 @@
 @section('content')
 
 <main>
+    
+<div
+      class="hero page-inner overlay"
+      style="background-image: url('images/hero_bg_3.jpg')"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-9 text-center mt-5">
+            <h1 class="heading" data-aos="fade-up">
+              5232 California AVE. 21BC
+            </h1>
 
-    <section class="intro-single">
-        <div class="container">
-            <div class="row">
-            <div class="col-md-12 col-lg-8">
-                <div class="title-single-box">
-                <h1 class="title-single">{{$news->title}}</h1>
-                <span class="color-text-a">News Single.</span>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
-                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                    <a href="#" class="text-black pr-2">Home /</a>
-                    </li>
-                    <li class=" active" aria-current="page">
-                    Book Cover Deisgn
-                    </li>
-                </ol>
-                </nav>
-            </div>
-            </div>
+            <nav
+              aria-label="breadcrumb"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <ol class="breadcrumb text-center justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">
+                  <a href="properties.html">Properties</a>
+                </li>
+                <li
+                  class="breadcrumb-item active text-white-50"
+                  aria-current="page"
+                >
+                  5232 California AVE. 21BC
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
-  
-        <section class="news-single nav-arrow-b">
-            <div class="container">
-                <div class="row">
-                <div class="col-sm-12">
-                    <div class="news-img-box">
-                    <img src="{{$news->image_path}}" alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                    <div class="post-information">
-                    <ul class="list-inline text-center color-a">
-                        <li class="list-inline-item mr-2">
-                        <strong>Author: </strong>
-                        <span class="color-text-a">{{$news->author}}</span>
-                        </li>
-                        <li class="list-inline-item mr-2">
-                        <strong>Category: </strong>
-                        <span class="color-text-a">Travel</span>
-                        </li>
-                        <li class="list-inline-item">
-                        <strong>Date: </strong>
-                        <span class="color-text-a">{{$news->updated_at}}</span>
-                        </li>
-                    </ul>
-                    </div>
-                    <div class="post-content color-text-a">
-                    <p class="post-intro">
-                        Sed porttitor lectus nibh. Lorem ipsum dolor sit amet, consectetur
-                        <strong>adipiscing</strong> elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                        Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-                    </p>
-                    <p>
-                        Proin eget tortor risus. Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum
-                        porta. Pellentesque
-                        in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                        dui. Lorem ipsum dolor sit amet.
-                    </p>
-                    <p>
-                        Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac
-                        lectus. Curabitur
-                        non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Curabitur non
-                        nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada.
-                        Quisque velit nisi.
-                    </p>
-                    <blockquote class="blockquote">
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">
-                        <strong>Albert Vargas</strong>
-                        <cite title="Source Title">Author</cite>
-                        </footer>
-                    </blockquote>
-                    <p>
-                        Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit
-                        tortor eget felis
-                        porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
-                    </p>
-                    </div>
-                    <div class="post-footer">
-                    <div class="post-share">
-                        <span>Share: </span>
-                        <ul class="list-inline socials">
-                        <li class="list-inline-item">
-                            <a href="#">
-                            <i class="bi bi-facebook" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                            <i class="bi bi-twitter" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                            <i class="bi bi-instagram" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                            <i class="bi bi-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-                
-                </div>
+    <div class="section">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-7">
+            <div class="img-property-slide-wrap">
+              <div class="img-property-slide">
+                <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                <img src="images/img_2.jpg" alt="Image" class="img-fluid" />
+                <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
+              </div>
             </div>
-        </section>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="heading text-primary">5232 California Ave. 21BC</h2>
+            <p class="meta">California, United States</p>
+            <p class="text-black-50">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+              laborum quo quos omnis sed magnam id, ducimus saepe, debitis error
+              earum, iste dicta odio est sint dolorem magni animi tenetur.
+            </p>
+            <p class="text-black-50">
+              Perferendis eligendi reprehenderit, assumenda molestias nisi eius
+              iste reiciendis porro tenetur in, repudiandae amet libero.
+              Doloremque, reprehenderit cupiditate error laudantium qui, esse
+              quam debitis, eum cumque perferendis, illum harum expedita.
+            </p>
+
+            <div class="d-block agent-box p-5">
+              <div class="img mb-4">
+                <img
+                  src="images/person_2-min.jpg"
+                  alt="Image"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="text">
+                <h3 class="mb-0">Alicia Huston</h3>
+                <div class="meta mb-3">Real Estate</div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ratione laborum quo quos omnis sed magnam id ducimus saepe
+                </p>
+                <ul class="list-unstyled social dark-hover d-flex">
+                  <li class="me-1">
+                    <a href="#"><span class="icon-instagram"></span></a>
+                  </li>
+                  <li class="me-1">
+                    <a href="#"><span class="icon-twitter"></span></a>
+                  </li>
+                  <li class="me-1">
+                    <a href="#"><span class="icon-facebook"></span></a>
+                  </li>
+                  <li class="me-1">
+                    <a href="#"><span class="icon-linkedin"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </main>
 
