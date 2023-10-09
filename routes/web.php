@@ -24,24 +24,26 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
+Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties');
 
-Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
-Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
+Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('properties.index');
 
-Route::get('/properties/{property}', [PropertyController::class, 'edit'])->name('properties.edit');
-Route::put('/properties/{property}', [PropertyController::class, 'update'])->name('properties.update');
+Route::get('/dashboard/properties/create', [PropertyController::class, 'create'])->name('properties.create');
+Route::post('/dashboard/properties', [PropertyController::class, 'store'])->name('properties.store');
+
+Route::get('/dashboard/properties/{property}', [PropertyController::class, 'edit'])->name('properties.edit');
+Route::put('/dashboard/properties/{property}', [PropertyController::class, 'update'])->name('properties.update');
 
 
-Route::delete('/properties/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
+Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
 
 /* Route::middleware(['role:admin'])->group(function () { */
-    Route::get('/news', [NewsController::class, 'index'])->name('news.index');
-    Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
-    Route::post('/news', [NewsController::class, 'store'])->name('news.store');
-    Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
-    Route::get('/news/{news}', [NewsController::class, 'edit'])->name('news.edit');
-    Route::put('/news/{news}', [NewsController::class, 'update'])->name('news.update');
+    Route::get('/dashboard/news', [NewsController::class, 'index'])->name('news.index');
+    Route::get('/dashboard/news/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/dashboard/news', [NewsController::class, 'store'])->name('news.store');
+    Route::delete('/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::get('/dashboard/news/{news}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('/dashboard/news/{news}', [NewsController::class, 'update'])->name('news.update');
 /* }); */
 
 Route::get('/upload-csv', [PropertyController::class, 'uploadCSV']);

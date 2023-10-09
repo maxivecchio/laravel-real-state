@@ -1,1 +1,5 @@
-# tp
+# Deploy proyect
+## composer install
+## npm i vite
+## npm run build
+## php artisan serve

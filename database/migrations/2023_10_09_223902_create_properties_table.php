@@ -17,8 +17,8 @@ return new class extends Migration
             $table->decimal('price', 15, 2);
             $table->string('country')->default('');
             $table->string('state')->default('');
-            $table->string('address')->default('');
             $table->string('city')->default('');
+            $table->string('address')->default('');
             $table->integer('zipcode')->default(111);
             $table->integer('kitchen')->default(0);
             $table->integer('bedroom')->default(0);

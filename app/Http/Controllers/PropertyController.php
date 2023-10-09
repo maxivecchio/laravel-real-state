@@ -11,13 +11,19 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-        return view('properties.index', ['properties' => $properties]);
+        return view('dashboard.properties.index', ['properties' => $properties]);
+    }
+
+    public function indexPublic()
+    {
+        $properties = Property::all();
+        return view('properties', ['properties' => $properties]);
     }
 
 
     public function create()
     {
-        return view('properties.create');
+        return view('dashboard.properties.create');
     }
 
     public function store(Request $request)
@@ -44,7 +50,7 @@ class PropertyController extends Controller
         $property = new Property($validatedData);
         $property->save();
 
-        return redirect()->route('properties.index');
+        return redirect()->route('dashboard.properties.index');
     }
 
     public function uploadCSV()
@@ -61,7 +67,7 @@ class PropertyController extends Controller
                 'price' => intval($columns[1]),
                 'country' => $columns[2],
                 'state' => $columns[3],
-                'addressCity' => $columns[4],
+                'city' => $columns[4],
                 'address' => $columns[5],
                 'zipcode' => intval($columns[6]),
                 'kitchen' => intval($columns[7]),
@@ -73,21 +79,22 @@ class PropertyController extends Controller
                 'size' => intval($columns[13]),
                 'image_path' => $columns[14],
             ];
+
             $property = new Property($propertyData);
             $property->save();
         }
-        return redirect()->route('properties.index');
+        return redirect()->route('dashboard.properties.index');
     }
     public function edit(Property $property)
     {
-        return view('properties.edit', compact('property'));
+        return view('dashboard.properties.edit', compact('property'));
     }
 
     public function update(Request $request, Property $property)
     {
         $property->update($request->all());
 
-        return redirect()->route('properties.index')->with('success', 'Property updated successfully');
+        return redirect()->route('dashboard.properties.index')->with('success', 'Property updated successfully');
     }
 
     public function destroy($id)
@@ -95,7 +102,7 @@ class PropertyController extends Controller
         $property = Property::findOrFail($id);
         $property->delete();
 
-        return redirect()->route('properties.index')->with('success', 'La propiedad ha sido eliminada correctamente.');
+        return redirect()->route('dashboard.properties.index')->with('success', 'La propiedad ha sido eliminada correctamente.');
     }
 
 }

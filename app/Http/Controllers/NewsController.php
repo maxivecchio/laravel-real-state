@@ -11,13 +11,13 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-        return view('news.index', ['news' => $news]);
+        return view('dashboard.news.index', ['news' => $news]);
     }
 
 
     public function create()
     {
-        return view('news.create');
+        return view('dashboard.news.create');
     }
 
     public function store(Request $request)
@@ -33,20 +33,20 @@ class NewsController extends Controller
         $news = new News($validatedData);
         $news->save();
     
-        return redirect()->route('news.index');
+        return redirect()->route('dashboard.news.index');
     }
 
 
     public function edit(News $news)
     {
-        return view('news.edit', compact('news'));
+        return view('dashboard.news.edit', compact('news'));
     }
 
     public function update(Request $request, News $news)
     {
         $news->update($request->all());
 
-        return redirect()->route('news.index')->with('success', 'La news ha sido actualizada correctamente.');
+        return redirect()->route('dashboard.news.index')->with('success', 'La news ha sido actualizada correctamente.');
     }
 
     public function destroy($id)
@@ -54,7 +54,7 @@ class NewsController extends Controller
         $news = News::findOrFail($id);
         $news->delete();
 
-        return redirect()->route('news.index')->with('success', 'La news ha sido eliminada correctamente.');
+        return redirect()->route('dashboard.news.index')->with('success', 'La news ha sido eliminada correctamente.');
     }
 
 

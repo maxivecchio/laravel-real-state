@@ -17,6 +17,7 @@ class Property extends Model
         'address',
         'country',
         'zipcode',
+        'city',
         'state',
         'kitchen',
         'bedroom',
