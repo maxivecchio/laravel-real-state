@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('subtitle');
             $table->text('body');
             $table->string('author');
+            $table->string('category');
             $table->string('image_path')->nullable();
             $table->boolean('display');
             $table->timestamps();
