@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="news-grid grid margenArriba mb-5">
+<section class="news-grid grid marginTop mb-5">
   <div class="container">
   <div class="row">
 

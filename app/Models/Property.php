@@ -11,14 +11,13 @@ class Property extends Model
     protected $table = 'properties';
 
     protected $fillable = [
-        'title',
-        'description',
+        'type',
         'price',
-        'address',
         'country',
-        'zipcode',
-        'city',
         'state',
+        'city',
+        'address',
+        'zipcode',
         'kitchen',
         'bedroom',
         'bathroom',
@@ -27,8 +26,7 @@ class Property extends Model
         'floors',
         'size',
         'image_path',
-        'owner_id',
-        'status_id'
+        'owner_id'
     ];
 
     public function status()

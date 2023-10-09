@@ -16,16 +16,14 @@
                 <div class="card">
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
-                    <div class="card-body">
+                    <div class="card-body d-block gap-4 d-sm-flex justify-content-around">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-
-                        {{ __('You are logged in!') }}
-                        <a href="{{ route('properties.index') }}">Manage Properties</a>
-                        <a href="{{ route('news.index') }}">Manage News</a>
+                        <a href="{{ route('properties.index') }}" class='manageButton'>Manage Properties</a>
+                        <a href="{{ route('news.index') }}" class='manageButton'>Manage News</a>
                     </div>
                 </div>
             </div>

@@ -100,7 +100,8 @@
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <img src="{{ $property->image_path }}" class='d-block w-25' alt="">
+                <input type="file" class="form-control border-0 mt-3" id="image" name="image">
             </div>
 
             <button type="submit" class="btn btn-primary">Update Property</button>
