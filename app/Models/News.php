@@ -15,6 +15,7 @@ class News extends Model
         'subtitle',
         'body',
         'author',
+        'category',
         'image_path',
         'display'
     ];

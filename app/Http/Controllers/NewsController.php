@@ -47,6 +47,7 @@ class NewsController extends Controller
             'subtitle' => $request->input('subtitle'),
             'body' => $request->input('body'),
             'author' => $request->input('author'),
+            'category' => $request->input('category'),
             'image_path' => $request->input('image_path'),
             'display' => $request->input('display'),
         ];
