@@ -5,7 +5,7 @@
         <h1>All News</h1>
         <div class="row">
             @foreach ($news as $newsItem)
-                <div class="col-md-4">
+                <div class="col-md-6">
                         <div class="card-box-b card-shadow news-box mb-4">
                         <div class="img-box-b">
                             <img src="{{ $newsItem->image_path}}" alt="" class="img-b img-fluid">
