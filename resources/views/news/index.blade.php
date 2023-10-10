@@ -9,7 +9,7 @@
   @foreach($news as $newsItem)
   @if($newsItem->display==1)
   
-    <div class="col-md-4">
+    <div class="col-md-6">
 
     <div class="card-box-b card-shadow news-box mb-4">
     <div class="img-box-b">
