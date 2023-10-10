@@ -15,7 +15,7 @@
                                     <div class="price mb-2"><span>${{ $property->price }}</span></div>
                                     <div>
                                         <span class="d-block mb-2 text-black-50">{{ $property->address }}</span>
-                                        <span>sq ft: {{ number_format($property->size) }}</span>
+                                        <span>sqm: {{ number_format($property->size) }}</span>
                                         <span class="city d-block mb-3">{{ $property->city }}, {{ $property->country }}</span>
                                         <div class="specs d-flex mb-4 flex-wrap gap-3">
                                             <span class="d-flex align-items-center">

@@ -48,7 +48,7 @@
             <h2 class="heading text-primary">{{$property->address}}</h2>
             <p class="meta">{{$property->city}}, {{$property->country}}</p>
             <div class="specs d-flex mb-4 flex-column gap-3">
-               <span>sq ft: {{ number_format($property->size) }}</span>
+               <span>sqm: {{ number_format($property->size) }}</span>
                  <span class="d-flex align-items-center">
                      <span class="icon-bed me-2"></span>
                      <span class="caption">{{ $property->bedroom }}</span>
