@@ -65,6 +65,31 @@ class NewsController extends Controller
         return redirect()->route('dashboard.news.index')->with('success', 'News successfully updated.');
     }
 
+    public function uploadCSV()
+    {
+        $csvFilePath = public_path('uploads/news.csv');
+
+        $csvData = file_get_contents($csvFilePath);
+
+        $rows = explode("\n", trim($csvData));
+        foreach ($rows as $row) {
+            $columns = str_getcsv($row, ",");
+            $newsData = [
+                'title' => $columns[0],
+                'subtitle' =>$columns[1],
+                'body' => $columns[2],
+                'author' => $columns[3],
+                'category' => $columns[4],
+                'image_path' => $columns[5],
+                'display' => intval($columns[6]),
+            ];
+
+            $news = new News($newsData);
+            $news->save();
+        }
+        return redirect()->route('dashboard.news.index')->with('success', 'News successfully added.');
+    }
+
     public function destroy($id)
     {
         $news = News::findOrFail($id);

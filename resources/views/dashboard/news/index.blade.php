@@ -7,7 +7,7 @@
 		<a class='createPropertyButton' href="{{ route('dashboard.news.create') }}">Publish news</a>
         <div class="row">
             @foreach ($news as $newsItem)
-                <div class="col-md-4">
+                <div class="col-md-6">
                         <div class="card-box-b card-shadow news-box mb-4">
                         <div class="img-box-b">
                             <img src="{{ $newsItem->image_path}}" alt="" class="img-b img-fluid">
@@ -19,8 +19,7 @@
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">
-                                    <a href="{{ route('news.single', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}
-                                        <br>new</a>
+                                    <a href="{{ route('news.single', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}</a>
                                     </h2>
                                 </div>
                                 <div class="card-date">
