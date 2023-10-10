@@ -60,10 +60,10 @@
                                 </span>
                             </div>
 
-                            <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a>
+                            <a href="/properties/{{$property->id}}" class="btn btn-primary py-2 px-3">See details</a>
                         </div>
                     </div>
-                </div> <!-- .item -->
+                </div>
             </div>
             @endforeach
         </div>
