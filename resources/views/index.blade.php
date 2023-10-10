@@ -35,7 +35,7 @@
                     <h2 class="font-weight-bold text-primary heading">Popular Properties</h2>
                 </div>
                 <div class="col-lg-6 text-lg-end">
-                    <p><a href="/properties" target="_blank" class="btn btn-primary text-white py-3 px-4">View all
+                    <p><a href="/properties" class="btn btn-primary text-white py-3 px-4">View all
                             properties</a></p>
                 </div>
             </div>
