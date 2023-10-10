@@ -8,7 +8,8 @@
 
   @foreach($news as $newsItem)
   @if($newsItem->display==1)
-  <div class="col-md-4">
+  
+    <div class="col-md-4">
 
     <div class="card-box-b card-shadow news-box mb-4">
     <div class="img-box-b">
@@ -17,11 +18,11 @@
       <div class="card-overlay">
         <div class="card-header-b">
           <div class="card-category-b">
-            <a href="#" class="category-b">Travel</a>
+            <a class="category-b">Travel</a>
           </div>
           <div class="card-title-b">
             <h2 class="title-2">
-              <a href="blog-single.html">{{ $newsItem->title }}
+              <a href="{{ route('news.single', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}
                 <br> new</a>
             </h2>
           </div>
@@ -34,7 +35,8 @@
     </div>
     @endif
     @endforeach
-  </div>
+    </div>  
+  
   </div>
 </section>
 
