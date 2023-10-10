@@ -47,17 +47,29 @@
           <div class="col-lg-4">
             <h2 class="heading text-primary">{{$property->address}}</h2>
             <p class="meta">{{$property->city}}, {{$property->country}}</p>
-            <!-- <p class="text-black-50">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
-              laborum quo quos omnis sed magnam id, ducimus saepe, debitis error
-              earum, iste dicta odio est sint dolorem magni animi tenetur.
-            </p>
-            <p class="text-black-50">
-              Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-              iste reiciendis porro tenetur in, repudiandae amet libero.
-              Doloremque, reprehenderit cupiditate error laudantium qui, esse
-              quam debitis, eum cumque perferendis, illum harum expedita.
-            </p> -->          
+            <span>sq ft: {{ number_format($property->size) }}</span>
+             <div class="specs d-flex mb-4 flex-col gap-3">
+                 <span class="d-flex align-items-center">
+                     <span class="icon-bed me-2"></span>
+                     <span class="caption">{{ $property->bedroom }}</span>
+                 </span>
+                 <span class="d-flex align-items-center">
+                     <span class="icon-bath me-2"></span>
+                     <span class="caption">{{ $property->bathroom }}</span>
+                 </span>
+                 <span class="d-flex align-items-center">
+                     <span class="fa-solid fa-warehouse me-2"></span>
+                     <span class="caption">{{ $property->garage }}</span>
+                 </span>
+                 <span class="d-flex align-items-center">
+                     <span class="fa-solid fa-stairs me-2"></span>
+                     <span class="caption">{{ $property->floors }}</span>
+                 </span>
+                 <span class="d-flex align-items-center">
+                     <span class="fa-solid fa-kitchen-set me-2"></span>
+                     <span class="caption">{{ $property->floors }}</span>
+                 </span>
+             </div>
           </div>
         </div>
       </div>
