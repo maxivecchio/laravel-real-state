@@ -27,17 +27,17 @@ Route::post('/search', [SearchController::class, 'search']);
 
 Auth::routes();
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.index');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.properties.index');
 
 /* Route::middleware(['role:admin'])->group(function () { */
-Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('properties.index');
-Route::get('/dashboard/properties/create', [PropertyController::class, 'create'])->name('properties.create');
-Route::post('/dashboard/properties', [PropertyController::class, 'store'])->name('properties.store');
-Route::get('/dashboard/properties/{property}', [PropertyController::class, 'edit'])->name('properties.edit');
-Route::put('/dashboard/properties/{property}', [PropertyController::class, 'update'])->name('properties.update');
-Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
-
-Route::get('/upload-csv', [PropertyController::class, 'uploadCSV'])->name('properties.uploadCSV');
+    Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('properties.index');
+    Route::get('/dashboard/properties/create', [PropertyController::class, 'create'])->name('properties.create');
+    Route::post('/dashboard/properties', [PropertyController::class, 'store'])->name('properties.store');
+    Route::get('/dashboard/properties/{property}', [PropertyController::class, 'edit'])->name('properties.edit');
+    Route::put('/dashboard/properties/{property}', [PropertyController::class, 'update'])->name('properties.update');
+    Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
+    
+    Route::get('/upload-csv', [PropertyController::class, 'uploadCSV'])->name('properties.uploadCSV');
 
 Route::get('/dashboard/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/dashboard/news/create', [NewsController::class, 'create'])->name('news.create');

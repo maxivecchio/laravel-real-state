@@ -13,8 +13,8 @@
     @endif
     <div class="container">
 		<h1>All Properties</h1>
-		<a class='createPropertyButton' href="{{ route('properties.uploadCSV') }}">Load Properties</a>
-		<a class='createPropertyButton' href="{{ route('properties.create') }}">Create new property</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.properties.uploadCSV') }}">Load Properties</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.properties.create') }}">Create new property</a>
         <div class='row'>
             @foreach ($properties as $property)
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -29,12 +29,12 @@
 								<span class="d-block mb-2 text-black-50">{{{ $property->address }}}</span>
 								<span class="city d-block mb-3">{{ $property->city }} {{ $property->country }}</span>
 
-                    			<a class='editPropertyButton' href="{{ route('properties.edit', $property) }}">Edit</a>
-								<form method="POST" action="{{ route('properties.destroy', $property->id) }}" style="display: inline;">
+                    			<a class='editPropertyButton' href="{{ route('dashboard.properties.edit', $property) }}">Edit</a>
+								<form method="POST" action="{{ route('dashboard.properties.destroy', $property->id) }}" style="display: inline;">
 									@csrf
 									@method('DELETE')
 									<button type="submit" class='deletePropertyButton'
-										onclick="return confirm('¿Estás seguro de que deseas eliminar esta propiedad?')">Delete</button>
+										onclick="return confirm('Are you sure you want to delete this property?')">Delete</button>
 								</form>
 							</div>
 						</div>

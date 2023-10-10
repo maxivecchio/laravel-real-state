@@ -46,14 +46,15 @@
 	
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="/">Home</a></li>
-						<li><a href="/properties">Properties</a></li>
+						<li><a href="{{ route('properties.index') }}">Properties</a></li>
 						<li><a href="{{ route('news.index') }}">News</a></li>
+						<li><a href="{{ route('news.index') }}">LogIn</a></li>
 						<li class="has-children">
-							<a href="/dashboard/properties">Dashboard</a>
+							<a href="{{ route('dashboard.properties.index') }}">Dashboard</a>
 							<ul class="dropdown">
-								<li><a href="{{ route('properties.create') }}">Create Property</a></li>
-								<li><a href="{{ route('properties.index') }}">Edit Properties</a></li>
-								<li><a href="{{ route('properties.index') }}">Delete Porperties</a></li>
+								<li><a href="{{ route('dashboard.properties.create') }}">Create Property</a></li>
+								<li><a href="{{ route('dashboard.properties.index') }}">Edit Properties</a></li>
+								<li><a href="{{ route('dashboard.properties.index') }}">Delete Porperties</a></li>
 							</ul>
 						</li>
 					</ul>
