@@ -12,7 +12,7 @@
                                     <img src="{{ $property->image_path }}" alt="Image" class="img-fluid">
                                 </a>
                                 <div class="property-content">
-                                    <div class="price mb-2"><span>${{ $property->price }}</span></div>
+                                    <div class="price mb-2"><span>${{ number_format($property->price) }}</span></div>
                                     <div>
                                         <span class="d-block mb-2 text-black-50">{{ $property->address }}</span>
                                         <span>sqm: {{ number_format($property->size) }}</span>
