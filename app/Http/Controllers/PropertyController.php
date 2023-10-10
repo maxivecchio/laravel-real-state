@@ -22,11 +22,11 @@ class PropertyController extends Controller
 
     public function getProperty($id)
     {
-        $propertiy = Property::find($id);
-        if (!$propertiy) {
+        $property = Property::find($id);
+        if (!$property) {
             abort(404);
         }
-        return view('properties.single', ['news' => $propertiy]);
+        return view('properties.single', ['property' => $property]);
     }
 
     public function popularProperties()
