@@ -32,7 +32,7 @@ class PropertyController extends Controller
     public function popularProperties()
     {
         $properties = Property::inRandomOrder()->take(6)->get();
-        return view('dashboard.properties.index', ['properties' => $properties]);
+        return view('index', ['properties' => $properties]);
     }
 
     public function create()
