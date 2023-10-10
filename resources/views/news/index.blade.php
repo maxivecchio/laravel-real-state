@@ -18,7 +18,7 @@
       <div class="card-overlay">
         <div class="card-header-b">
           <div class="card-category-b">
-            <a class="category-b">Travel</a>
+            <a class="category-b">{{ $newsItem->category }}</a>
           </div>
           <div class="card-title-b">
             <h2 class="title-2">

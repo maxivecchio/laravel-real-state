@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>news</h1>
+        <h1>All News</h1>
         <div class="row">
             @foreach ($news as $newsItem)
                 <div class="col-md-4">
