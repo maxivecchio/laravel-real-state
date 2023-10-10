@@ -13,12 +13,12 @@
                         <div class="card-overlay">
                             <div class="card-header-b">
                                 <div class="card-category-b">
-                                    <a class="category-b">Travel</a>
+                                    <a class="category-b">{{ $newsItem->category }}</a>
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">
                                     <a href="{{ route('news.single', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}
-                                        <br> new</a>
+                                        <br>new</a>
                                     </h2>
                                 </div>
                                 <div class="card-date">
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='actions'>
+                    <div class='actionsNewsDashboard'>
                         <a class='editPropertyButton' href="{{ route('dashboard.news.edit', $newsItem) }}">Edit</a>
                         <form method="POST" action="{{ route('dashboard.news.destroy', $newsItem->id) }}" style="display: inline;">
                             @csrf
