@@ -3,6 +3,8 @@
 @section('content')
     <div class="container">
         <h1>All News</h1>
+        <a class='createPropertyButton' href="{{ route('dashboard.news.create') }}">Load News</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.news.create') }}">Publish news</a>
         <div class="row">
             @foreach ($news as $newsItem)
                 <div class="col-md-6">
