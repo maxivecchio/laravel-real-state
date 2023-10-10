@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
     <div class="container">
 		<h1>All Properties</h1>
 		<a class='createPropertyButton' href="{{ route('dashboard.properties.uploadCSV') }}">Load Predefined Properties</a>
 		<a class='createPropertyButton' href="{{ route('dashboard.properties.emptyTable') }}">Empty Properties Table</a>
 		<a class='createPropertyButton' href="{{ route('dashboard.properties.create') }}">Create New Property</a>
+		@if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+		@endif
+		@if (session('error'))
+			<div class="alert alert-danger">
+				{{ session('error') }}
+			</div>
+		@endif
         <div class='row'>
             @foreach ($properties as $property)
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
