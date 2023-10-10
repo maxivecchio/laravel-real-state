@@ -29,7 +29,7 @@ Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.properties.index');
 
-Route::middleware(['role:admin'])->group(function () {
+/* Route::middleware(['role:admin'])->group(function () { */
     Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('dashboard.properties.index');
     Route::get('/dashboard/properties/create', [PropertyController::class, 'create'])->name('dashboard.properties.create');
     Route::post('/dashboard/properties', [PropertyController::class, 'store'])->name('dashboard.properties.store');
@@ -47,7 +47,7 @@ Route::middleware(['role:admin'])->group(function () {
     Route::get('/dashboard/news/{news}', [NewsController::class, 'edit'])->name('dashboard.news.edit');
     Route::put('/dashboard/news/{news}', [NewsController::class, 'update'])->name('dashboard.news.update');
 
-});
+/* }); */
 
 
 Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties.index');
