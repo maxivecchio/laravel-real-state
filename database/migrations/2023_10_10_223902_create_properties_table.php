@@ -31,6 +31,9 @@ return new class extends Migration
             $table->unsignedBigInteger('owner_id')->nullable();
             $table->unsignedBigInteger('status_id')->nullable();
             $table->timestamps();
+
+            //nuevo
+            $table->softDeletes();
         });
     }
     
