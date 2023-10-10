@@ -55,7 +55,7 @@
                                 <li><a href="{{ route('login') }}">LogIn</a></li>
                             @endif
                             @if (Route::has('register'))
-                                <li><a href="{{ route('login') }}">Register</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
                             @endif
                         @else
                             @if (Auth::user()->hasRole('admin'))
