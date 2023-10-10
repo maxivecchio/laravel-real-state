@@ -21,8 +21,6 @@ class SearchController extends Controller
 
         $properties = $query->get();
 
-/*         dd($properties); */
-
         return view('search-results', ['properties' => $properties]);
     }
 }

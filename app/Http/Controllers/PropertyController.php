@@ -97,7 +97,7 @@ class PropertyController extends Controller
             $property = new Property($propertyData);
             $property->save();
         }
-        return redirect()->route('dashboard.properties.index');
+        return redirect()->route('properties.index');
     }
     public function edit(Property $property)
     {
