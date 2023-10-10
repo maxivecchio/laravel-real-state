@@ -20,6 +20,9 @@ return new class extends Migration {
             $table->string('image_path')->nullable();
             $table->boolean('display');
             $table->timestamps();
+
+            //nuevo
+            $table->softDeletes();
         });
     }
 
