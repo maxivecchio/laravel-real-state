@@ -13,6 +13,7 @@
     @endif
     <div class="container">
 		<h1>All Properties</h1>
+		<a class='createPropertyButton' href="{{ route('properties.uploadCSV') }}">Load Properties</a>
 		<a class='createPropertyButton' href="{{ route('properties.create') }}">Create new property</a>
         <div class='row'>
             @foreach ($properties as $property)

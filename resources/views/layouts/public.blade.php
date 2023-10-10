@@ -49,7 +49,7 @@
 						<li><a href="/properties">Properties</a></li>
 						<li><a href="{{ route('news.index') }}">News</a></li>
 						<li class="has-children">
-							<a href="{{ route('properties.index') }}">Dashboard</a>
+							<a href="/dashboard/properties">Dashboard</a>
 							<ul class="dropdown">
 								<li><a href="{{ route('properties.create') }}">Create Property</a></li>
 								<li><a href="{{ route('properties.index') }}">Edit Properties</a></li>
