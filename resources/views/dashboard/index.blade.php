@@ -23,7 +23,7 @@
                             </div>
                         @endif
                         <a href="{{ route('dashboard.properties.index') }}" class='manageButton'>Manage Properties</a>
-                        <a href="{{ route('news.index') }}" class='manageButton'>Manage News</a>
+                        <a href="{{ route('dashboard.news.index') }}" class='manageButton'>Manage News</a>
                     </div>
                 </div>
             </div>

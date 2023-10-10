@@ -39,12 +39,12 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.prop
     
     Route::get('/upload-csv', [PropertyController::class, 'uploadCSV'])->name('dashboard.properties.uploadCSV');
 
-Route::get('/dashboard/news', [NewsController::class, 'index'])->name('news.index');
-Route::get('/dashboard/news/create', [NewsController::class, 'create'])->name('news.create');
-Route::post('/dashboard/news', [NewsController::class, 'store'])->name('news.store');
-Route::delete('/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
-Route::get('/dashboard/news/{news}', [NewsController::class, 'edit'])->name('news.edit');
-Route::put('/dashboard/news/{news}', [NewsController::class, 'update'])->name('news.update');
+Route::get('/dashboard/news', [NewsController::class, 'index'])->name('dashboard.news.index');
+Route::get('/dashboard/news/create', [NewsController::class, 'create'])->name('dashboard.news.create');
+Route::post('/dashboard/news', [NewsController::class, 'store'])->name('dashboard.news.store');
+Route::delete('/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('dashboard.news.destroy');
+Route::get('/dashboard/news/{news}', [NewsController::class, 'edit'])->name('dashboard.news.edit');
+Route::put('/dashboard/news/{news}', [NewsController::class, 'update'])->name('dashboard.news.update');
 
 /* }); */
 
