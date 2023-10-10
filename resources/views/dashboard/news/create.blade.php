@@ -4,7 +4,7 @@
 <div class="container">
     <h1>TODAS PUTAS</h1>
 
-    <form action="{{ route('news.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('dashboard.news.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
