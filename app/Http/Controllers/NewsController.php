@@ -76,7 +76,7 @@ class NewsController extends Controller
             $columns = str_getcsv($row, ",");
             $newsData = [
                 'title' => $columns[0],
-                'subtitle' =>$columns[1],
+                'subtitle' => $columns[1],
                 'body' => $columns[2],
                 'author' => $columns[3],
                 'category' => $columns[4],
@@ -88,6 +88,16 @@ class NewsController extends Controller
             $news->save();
         }
         return redirect()->route('dashboard.news.index')->with('success', 'News successfully added.');
+    }
+
+    public function emptyTable()
+    {
+        try {
+            News::truncate();
+            return redirect()->route('dashboard.news.index')->with('success', 'News successfully deleted.');
+        } catch (\Exception $e) {
+            return redirect()->route('dashboard.news.index')->with('error', 'Error.');
+        }
     }
 
     public function destroy($id)

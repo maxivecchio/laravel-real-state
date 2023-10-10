@@ -38,7 +38,7 @@ Route::middleware(['role:admin'])->group(function () {
     Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy'])->name('dashboard.properties.destroy');
 
     Route::get('/upload-csv', [PropertyController::class, 'uploadCSV'])->name('dashboard.properties.uploadCSV');
-    Route::get('/upload-csv-news', [NewsController::class, 'uploadCSV'])->name('dashboard.news.uploadCSV');
+    Route::get('/property-emptytable', [PropertyController::class, 'emptyTable'])->name('dashboard.properties.emptyTable');
 
     Route::get('/dashboard/news', [NewsController::class, 'index'])->name('dashboard.news.index');
     Route::get('/dashboard/news/create', [NewsController::class, 'create'])->name('dashboard.news.create');
@@ -46,6 +46,9 @@ Route::middleware(['role:admin'])->group(function () {
     Route::delete('/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('dashboard.news.destroy');
     Route::get('/dashboard/news/{news}', [NewsController::class, 'edit'])->name('dashboard.news.edit');
     Route::put('/dashboard/news/{news}', [NewsController::class, 'update'])->name('dashboard.news.update');
+
+    Route::get('/upload-csv-news', [NewsController::class, 'uploadCSV'])->name('dashboard.news.uploadCSV');
+    Route::get('/news-emptytable', [NewsController::class, 'emptyTable'])->name('dashboard.news.emptyTable');
 });
 
 

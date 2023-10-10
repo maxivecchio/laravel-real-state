@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Add New Property</h1>
 
-        <form action="{{ route('properties.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.properties.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">

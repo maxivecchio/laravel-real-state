@@ -13,8 +13,9 @@
     @endif
     <div class="container">
 		<h1>All Properties</h1>
-		<a class='createPropertyButton' href="{{ route('dashboard.properties.uploadCSV') }}">Load Properties</a>
-		<a class='createPropertyButton' href="{{ route('dashboard.properties.create') }}">Create new property</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.properties.uploadCSV') }}">Load Predefined Properties</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.properties.emptyTable') }}">Empty Properties Table</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.properties.create') }}">Create New Property</a>
         <div class='row'>
             @foreach ($properties as $property)
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">

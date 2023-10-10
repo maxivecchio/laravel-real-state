@@ -3,8 +3,19 @@
 @section('content')
     <div class="container">
         <h1>All News</h1>
-        <a class='createPropertyButton' href="{{ route('dashboard.news.uploadCSV') }}">Load News</a>
-		<a class='createPropertyButton' href="{{ route('dashboard.news.create') }}">Publish news</a>
+        <a class='createPropertyButton' href="{{ route('dashboard.news.uploadCSV') }}">Load Predefined News</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.news.emptyTable') }}">Empty News Table</a>
+		<a class='createPropertyButton' href="{{ route('dashboard.news.create') }}">Publish News</a>
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="row">
             @foreach ($news as $newsItem)
                 <div class="col-md-6">
@@ -19,7 +30,7 @@
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">
-                                    <a href="{{ route('news.single', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}</a>
+                                    <span class="text-white">{{ $newsItem->title }}</span>
                                     </h2>
                                 </div>
                                 <div class="card-date">
@@ -41,15 +52,4 @@
             @endforeach
         </ul>
     </div>
-
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
-    @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
 @endsection

@@ -99,6 +99,16 @@ class PropertyController extends Controller
         }
         return redirect()->route('dashboard.properties.index');
     }
+
+    public function emptyTable()
+    {
+        try {
+            Property::truncate();
+            return redirect()->route('dashboard.properties.index')->with('success', 'Properties successfully deleted.');
+        } catch (\Exception $e) {
+            return redirect()->route('dashboard.properties.index')->with('error', 'Error.');
+        }
+    }
     public function edit(Property $property)
     {
         return view('dashboard.properties.edit', compact('property'));
