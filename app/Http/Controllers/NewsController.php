@@ -24,9 +24,9 @@ class NewsController extends Controller
     {
         $news = News::find($id);
         if (!$news) {
-            abort(404); 
+            abort(404);
         }
-    
+
         return view('news.single', compact('news'));
     }
 
@@ -48,7 +48,7 @@ class NewsController extends Controller
         ];
         $news = new News($validatedData);
         $news->save();
-    
+
         return redirect()->route('dashboard.news.index');
     }
 
@@ -62,7 +62,7 @@ class NewsController extends Controller
     {
         $news->update($request->all());
 
-        return redirect()->route('dashboard.news.index')->with('success', 'La news ha sido actualizada correctamente.');
+        return redirect()->route('dashboard.news.index')->with('success', 'News successfully updated.');
     }
 
     public function destroy($id)
@@ -70,9 +70,6 @@ class NewsController extends Controller
         $news = News::findOrFail($id);
         $news->delete();
 
-        return redirect()->route('dashboard.news.index')->with('success', 'La news ha sido eliminada correctamente.');
+        return redirect()->route('dashboard.news.index')->with('success', 'News successfully deleted.');
     }
-
-
-
 }

@@ -97,7 +97,7 @@ class PropertyController extends Controller
             $property = new Property($propertyData);
             $property->save();
         }
-        return redirect()->route('properties.index');
+        return redirect()->route('dashboard.properties.index');
     }
     public function edit(Property $property)
     {
@@ -116,7 +116,7 @@ class PropertyController extends Controller
         $property = Property::findOrFail($id);
         $property->delete();
 
-        return redirect()->route('dashboard.properties.index')->with('success', 'La propiedad ha sido eliminada correctamente.');
+        return redirect()->route('dashboard.properties.index')->with('success', 'The property has been deleted successfully.');
     }
 
 }
