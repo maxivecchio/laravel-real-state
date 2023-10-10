@@ -26,7 +26,8 @@ class NewsController extends Controller
         if (!$news) {
             abort(404); 
         }
-        return view('news.single', ['news' => $news]);
+    
+        return view('news.single', compact('news'));
     }
 
     public function create()

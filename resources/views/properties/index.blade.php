@@ -39,11 +39,19 @@
                             <div class="specs d-flex mb-4">
                                 <span class="d-block d-flex align-items-center me-3">
                                     <span class="icon-bed me-2"></span>
-                                    <span class="caption">{{ $property->bedroom }} bedrooms</span>
+                                    <span class="caption">{{ $property->bedroom }}</span>
+                                </span>
+                                <span class="d-block d-flex align-items-center me-3">
+                                    <span class="icon-bath me-2"></span>
+                                    <span class="caption">{{ $property->bathroom }}</span>
+                                </span>
+                                <span class="d-block d-flex align-items-center me-3">
+                                    <span class="fa-solid fa-warehouse me-2"></span>
+                                    <span class="caption">{{ $property->garage }}</span>
                                 </span>
                                 <span class="d-block d-flex align-items-center">
-                                    <span class="icon-bath me-2"></span>
-                                    <span class="caption">{{ $property->bathroom }} baths</span>
+                                    <span class="fa-solid fa-stairs me-2"></span>
+                                    <span class="caption">{{ $property->floors }}</span>
                                 </span>
                             </div>
 

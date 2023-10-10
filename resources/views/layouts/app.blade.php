@@ -16,7 +16,7 @@
 
 	<link rel="stylesheet" href="{{asset('/fonts/icomoon/style.css')}}" >
 	<link rel="stylesheet" href="{{asset('/fonts/flaticon/font/flaticon.css')}}">
-
+    <script src="https://kit.fontawesome.com/82cfd2079d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="{{asset('/css/tiny-slider.css')}}" >
     <link rel="stylesheet" href="{{asset('/css/aos.css')}}" >
