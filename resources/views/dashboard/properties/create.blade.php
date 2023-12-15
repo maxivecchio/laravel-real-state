@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Add New Property</h1>
 
-        <form action="{{ route('dashboard.properties.store') }}" method="post" enctype="multipart/form-data">
+        <form action="/dashboard/properties" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -81,11 +81,6 @@
             <div class="mb-3">
                 <label for="size" class="form-label">Size (sqm)</label>
                 <input type="number" class="form-control" id="size" name="size" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control" id="image" name="image">
             </div>
 
             <button type="submit" class="btn btn-primary">Add Property</button>

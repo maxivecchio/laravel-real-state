@@ -40,20 +40,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto gap-2">
-                        <li><a href="{{ route('dashboard.properties.index') }}">Properties</a></li>
-                        <li><a href="{{ route('dashboard.news.index') }}">News</a></li>
+                        <li><a href="/dashboard/properties">Properties</a></li>
+                        <li><a href="/dashboard/news">News</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav gap-2">
                         <li><a class="nav-link" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a></li>
                         <li>
-                            <a class="nav-link" href="{{ route('logout') }}"
+                            <a class="nav-link" href="/logout"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="/logout" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </li>

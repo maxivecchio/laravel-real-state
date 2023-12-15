@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->text('body');
             $table->string('author');
             $table->string('category');
-            $table->string('image_path')->nullable();
+            $table->text('image_path')->nullable();
             $table->boolean('display');
             $table->timestamps();
 

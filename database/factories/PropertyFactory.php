@@ -2,42 +2,36 @@
 
 namespace Database\Factories;
 
+use App\Models\Property;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Property>
- */
 class PropertyFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Property::class;
+
+    /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
     public function definition()
     {
         return [
-            'title' => $this->faker->words(3, true),
-            'description' => $this->faker->paragraph,
-            'price' => $this->faker->numberBetween(100000, 1000000),
-            'address' => $this->faker->words(3, true),
-            'country' => $this->faker->words(3, true),
-            'zipcode' => $this->faker->numberBetween(2, 8),
-            'state' => $this->faker->words(2, true),
-            'bedrooms' => $this->faker->numberBetween(1, 3),
-            'bathrooms' => $this->faker->numberBetween(1, 3),
-            'kitchen' => $this->faker->numberBetween(1, 3),
-            'bedroom' => $this->faker->numberBetween(1, 3),
-            'bathroom' => $this->faker->numberBetween(1, 3),
-            'office' => $this->faker->numberBetween(1, 3),
-            'garage' => $this->faker->numberBetween(1, 3),
-            'floors' => $this->faker->numberBetween(1, 3),
-            'size' => $this->faker->numberBetween(50, 200),
-            'image_path' => $this->faker->imageUrl(),
-            'owner_id' => 4,
-            'status_id' => \App\Models\PropertyStatus::inRandomOrder()->first()->id
+            'type' => 'House',
+            'price' => $this->faker->randomFloat(2, 100000, 5000000),
+            'country' => $this->faker->country,
+            'state' => $this->faker->state,
+            'city' => $this->faker->city,
+            'address' => $this->faker->streetAddress,
+            'zipcode' => $this->faker->postcode,
+            'size' => $this->faker->randomFloat(1, 50, 500),
+            'image_path' => 'https://www.zillowstatic.com/bedrock/app/uploads/sites/47/GA_ATL_DOWNTOWN_82792_078-RT_RT_cropRT-5f9e47.jpg',
         ];
     }
-
-
 }
+

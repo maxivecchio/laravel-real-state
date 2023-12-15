@@ -20,24 +20,12 @@ class Property extends Model
         'city',
         'address',
         'zipcode',
-        'kitchen',
-        'bedroom',
-        'bathroom',
-        'office',
-        'garage',
-        'floors',
         'size',
         'image_path',
-        'owner_id',
     ];
 
-    public function status()
+    public function characteristics()
     {
-        return $this->belongsTo(PropertyStatus::class, 'status_id');
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class, 'owner_id');
+        return $this->hasOne(PropertyCharacteristics::class);
     }
 }

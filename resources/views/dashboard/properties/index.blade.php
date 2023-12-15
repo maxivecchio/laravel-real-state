@@ -3,9 +3,7 @@
 @section('content')
     <div class="container">
 		<h1>All Properties</h1>
-		<a class='createPropertyButton' href="{{ route('dashboard.properties.uploadCSV') }}">Load Predefined Properties</a>
-		<a class='createPropertyButton' href="{{ route('dashboard.properties.emptyTable') }}">Empty Properties Table</a>
-		<a class='createPropertyButton' href="{{ route('dashboard.properties.create') }}">Create New Property</a>
+		<a class='createPropertyButton' href="/dashboard/properties/create">Create New Property</a>
 		@if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -26,17 +24,15 @@
 
 						<div class="property-content">
 							<div class="price mb-2"><span>${{ number_format($property->price) }}</span></div>
-							<div>
+							<div> 
 								<span class="d-block mb-2 text-black-50">{{{ $property->address }}}</span>
-								<span class="city d-block mb-3">{{ $property->city }} {{ $property->country }}</span>
-
-                    			<a class='editPropertyButton' href="{{ route('dashboard.properties.edit', $property) }}">Edit</a>
-								<form method="POST" action="{{ route('dashboard.properties.destroy', $property->id) }}" style="display: inline;">
-									@csrf
-									@method('DELETE')
-									<button type="submit" class='deletePropertyButton'
-										onclick="return confirm('Are you sure you want to delete this property?')">Delete</button>
-								</form>
+								<span class="city d-block mb-3">{{ $property->city }}, {{ $property->country }}</span>
+								<a class='editPropertyButton' href="/dashboard/properties/{{ $property->id }}/edit">Edit</a>
+								<form method="POST" action="/dashboard/properties/{{ $property->id }}" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class='deletePropertyButton'>Delete</button>
+                                </form>
 							</div>
 						</div>
 					</div> <!-- .item -->

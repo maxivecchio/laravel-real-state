@@ -6,31 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Untree.co">
     <link rel="icon" type="image/png" href="/images/icon.png">
-
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap5" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
     <link rel="stylesheet" href="{{ asset('/fonts/icomoon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/fonts/flaticon/font/flaticon.css') }}">
     <script src="https://kit.fontawesome.com/82cfd2079d.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="{{ asset('/css/tiny-slider.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/style2.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
-
-
     <title>{{ config('app.name', 'Properties') }}</title>
 </head>
 
 <body>
-
     <div class="site-mobile-menu site-navbar-target">
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close">
@@ -45,25 +37,20 @@
             <div class="menu-bg-wrap">
                 <div class="site-navigation">
                     <a href="/" class="logo m-0 float-start">{{ config('app.name', 'Properties') }}</a>
-
                     <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="{{ route('properties.index') }}">Properties</a></li>
-                        <li><a href="{{ route('news.index') }}">News</a></li>
+                        <li><a href="/properties">Properties</a></li>
+                        <li><a href="/news">News</a></li>
                         @guest
-                            @if (Route::has('login'))
-                                <li><a href="{{ route('login') }}">LogIn</a></li>
-                            @endif
-                            @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}">Register</a></li>
-                            @endif
+                            <li><a href="/login">LogIn</a></li>
+                            <li><a href="/register">Register</a></li>
                         @else
                             @if (Auth::user()->hasRole('admin'))
                                 <li class="has-children">
                                     <a href="/dashboard">Dashboard</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('dashboard.properties.index') }}">Manage Properties</a></li>
-                                        <li><a href="{{ route('dashboard.news.index') }}">Manage News</a></li>
+                                        <li><a href="/dashboard/properties">Manage Properties</a></li>
+                                        <li><a href="/dashboard/news">Manage News</a></li>
                                     </ul>
                                 </li>
                             @endif
@@ -72,37 +59,39 @@
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-																			 document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="/profile">
+                                    My Profile
+                                </a>
+                                <a class="dropdown-item" href="/comparisons">
+                                    My Comparisons
+                                </a>
+                                <a class="dropdown-item" href="/orders">
+                                    My Orders
+                                </a>
+                                <a class="dropdown-item" href="/logout"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="/logout" method="POST" class="d-none">
                                         @csrf
                                     </form>
-
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                        <li><a href="/cart">Cart</a></li>
 
+                    </ul>
                     <a href="#"
                         class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
                         data-toggle="collapse" data-target="#main-navbar">
                         <span></span>
                     </a>
-
                 </div>
             </div>
         </div>
     </nav>
-
-
     @yield('content')
-
     <div class="site-footer">
         <div class="container">
 
@@ -137,8 +126,8 @@
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">Creative</a></li>
                         </ul>
-                    </div> <!-- /.widget -->
-                </div> <!-- /.col-lg-4 -->
+                    </div>
+                </div>
                 <div class="col-lg-4">
                     <div class="widget">
                         <h3>Links</h3>
@@ -156,16 +145,17 @@
                             <li><a href="#"><span class="icon-pinterest"></span></a></li>
                             <li><a href="#"><span class="icon-dribbble"></span></a></li>
                         </ul>
-                    </div> <!-- /.widget -->
-                </div> <!-- /.col-lg-4 -->
-            </div> <!-- /.row -->
+                    </div>
+                </div>
+            </div>
 
             <div class="row mt-5">
                 <div class="col-12 text-center">
                     <p>Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script>. All Rights Reserved. &mdash; Made with <i class="fa-solid fa-heart" style="color: #ad0000;"></i> by
+                        </script>. All Rights Reserved. &mdash; Made with <i class="fa-solid fa-heart"
+                            style="color: #ad0000;"></i> by
                         <span>Lucas Cash</span>,
                         <a href="https://portfolio.prismateweb.com" target="_blank">Leonardo Decanini</a>, <a
                             href="https://emilianomorales.com" target="_blank">Emiliano Morales</a>, <a
@@ -173,28 +163,19 @@
                     </p>
                 </div>
             </div>
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
-
-
-    <!-- Preloader -->
+        </div>
+    </div>
     <div id="overlayer"></div>
     <div class="loader">
         <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-
-
-
     <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
-
     <script src="{{ asset('/js/tiny-slider.js') }}"></script>
     <script src="{{ asset('/js/aos.js') }}"></script>
-
     <script src="{{ asset('/js/navbar.js') }}"></script>
     <script src="{{ asset('/js/counter.js') }}"></script>
     <script src="{{ asset('/js/custom.js') }}"></script>
 </body>
-
 </html>

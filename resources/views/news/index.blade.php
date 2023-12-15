@@ -22,7 +22,7 @@
           </div>
           <div class="card-title-b">
             <h2 class="title-2">
-              <a href="{{ route('news.single', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}</a>
+              <a href="/news/{{$newsItem->id}}}">{{ $newsItem->title }}</a>
             </h2>
           </div>
           <div class="card-date">

@@ -2,58 +2,42 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PropertyController;
-use App\Http\Controllers\NewsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ComparisonController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\AdminNewsController;
+use App\Http\Controllers\Admin\AdminPropertyController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\OrderAdminController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::resource('/', HomeController::class)->only(['index']);
+Route::resource('/search', SearchController::class)->only(['index', 'store']);
 
+Route::resource("/register", RegisterController::class)->only(['index', 'create', 'store']);
+Route::resource("/login", LoginController::class)->only(['index', 'store']);
+Route::resource("/logout", LogoutController::class)->only(['index', 'store']);
 
+Route::resource('/properties', PropertyController::class)->only(['index', "show"]);
+Route::resource('/properties/compare', PropertyController::class)->only(['index', "show"]);
+Route::resource('/news', NewsController::class)->only(['index', "show"]);
 
-Route::get('/', [PropertyController::class, 'popularProperties'])->name('index');
-
-Route::get('/search', [SearchController::class, 'index']);
-Route::post('/search', [SearchController::class, 'search']);
-
-Auth::routes();
-
-
+Route::resource('/comparisons', ComparisonController::class);
+Route::resource('/cart', CartController::class)->only(['index', 'store', 'destroy']);
+Route::resource('/orders', OrderController::class)->only(['index', 'show', 'store']);
+Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'update']);
+Route::resource('/dashboard/users', UsersController::class)->only(['index']);
+Route::resource('/dashboard/users/orders', OrderAdminController::class)->only(['index', 'show']);
 Route::middleware(['role:admin'])->group(function () {
-    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.properties.index');
-    Route::get('/dashboard/properties', [PropertyController::class, 'index'])->name('dashboard.properties.index');
-    Route::get('/dashboard/properties/create', [PropertyController::class, 'create'])->name('dashboard.properties.create');
-    Route::post('/dashboard/properties', [PropertyController::class, 'store'])->name('dashboard.properties.store');
-    Route::get('/dashboard/properties/{property}', [PropertyController::class, 'edit'])->name('dashboard.properties.edit');
-    Route::put('/dashboard/properties/{property}', [PropertyController::class, 'update'])->name('dashboard.properties.update');
-    Route::delete('/dashboard/properties/{id}', [PropertyController::class, 'destroy'])->name('dashboard.properties.destroy');
-
-    Route::get('/upload-csv', [PropertyController::class, 'uploadCSV'])->name('dashboard.properties.uploadCSV');
-    Route::get('/property-emptytable', [PropertyController::class, 'emptyTable'])->name('dashboard.properties.emptyTable');
-
-    Route::get('/dashboard/news', [NewsController::class, 'index'])->name('dashboard.news.index');
-    Route::get('/dashboard/news/create', [NewsController::class, 'create'])->name('dashboard.news.create');
-    Route::post('/dashboard/news', [NewsController::class, 'store'])->name('dashboard.news.store');
-    Route::delete('/dashboard/news/{id}', [NewsController::class, 'destroy'])->name('dashboard.news.destroy');
-    Route::get('/dashboard/news/{news}', [NewsController::class, 'edit'])->name('dashboard.news.edit');
-    Route::put('/dashboard/news/{news}', [NewsController::class, 'update'])->name('dashboard.news.update');
-
-    Route::get('/upload-csv-news', [NewsController::class, 'uploadCSV'])->name('dashboard.news.uploadCSV');
-    Route::get('/news-emptytable', [NewsController::class, 'emptyTable'])->name('dashboard.news.emptyTable');
+    Route::resource('/dashboard', DashboardController::class)->only(['index']);
+    Route::resource('/dashboard/news', AdminNewsController::class)->only(['index', "create", "store", "edit", "update", "destroy"]);
+    Route::resource('/dashboard/properties', AdminPropertyController::class)->only(['index', "create", "store", "edit", "update", "destroy"]);
 });
-
-
-Route::get('/properties', [PropertyController::class, 'indexPublic'])->name('properties.index');
-Route::get('/properties/{id}', [PropertyController::class, 'getProperty'])->name('properties.single');
-
-Route::get('/news', [NewsController::class, 'indexPublic'])->name('news.index');
-Route::get('/news/{id}', [NewsController::class, 'getNews'])->name('news.single');

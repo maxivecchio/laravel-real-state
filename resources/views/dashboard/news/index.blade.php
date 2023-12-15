@@ -3,9 +3,7 @@
 @section('content')
     <div class="container">
         <h1>All News</h1>
-        <a class='createPropertyButton' href="{{ route('dashboard.news.uploadCSV') }}">Load Predefined News</a>
-		<a class='createPropertyButton' href="{{ route('dashboard.news.emptyTable') }}">Empty News Table</a>
-		<a class='createPropertyButton' href="{{ route('dashboard.news.create') }}">Publish News</a>
+		<a class='createPropertyButton' href="/dashboard/news/create">Publish News</a>
         @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -40,13 +38,12 @@
                         </div>
                     </div>
                     <div class='actionsNewsDashboard'>
-                        <a class='editPropertyButton' href="{{ route('dashboard.news.edit', $newsItem) }}">Edit</a>
-                        <form method="POST" action="{{ route('dashboard.news.destroy', $newsItem->id) }}" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class='deletePropertyButton'
-                                onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
-                        </form>
+                        <a class='editPropertyButton' href="/dashboard/news/{{ $newsItem->id }}/edit">Edit</a>
+    						<form method="POST" action="/dashboard/news/{{ $newsItem->id }}" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class='deletePropertyButton'>Delete</button>
+                            </form>
                     </div>
                 </div>                    
             @endforeach

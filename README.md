@@ -1,6 +1,7 @@
-# Steps
-#### composer install
-#### npm i vite
-#### npm run build
-#### php artisan migrate
-#### php artisan serve
+#Vecchio Maximiliano
+
+composer install
+php artisan migrate
+php artisan db:seed RoleSeeder
+php artisan db:seed PropertySeeder
+php artisan db:seed PropertyCharacteristicsSeeder

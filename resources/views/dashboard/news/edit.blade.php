@@ -4,9 +4,9 @@
 <div class="container">
     <h1>Edit news</h1>
 
-    <form method="POST" action="{{ route('dashboard.news.update', $news) }}">
-        @csrf
-        @method('PUT')
+    <form method="POST" action="/dashboard/news/{{ $news->id }}" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>

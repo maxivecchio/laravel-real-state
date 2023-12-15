@@ -13,6 +13,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+
+                <div class="mt-2">
+                    <h2>Welcome to dashboard.</h2>
+                </div>
+
                 <div class="card">
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -22,8 +27,26 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <a href="{{ route('dashboard.properties.index') }}" class='manageButton'>Manage Properties</a>
-                        <a href="{{ route('dashboard.news.index') }}" class='manageButton'>Manage News</a>
+                        <a href="dashboard/properties" class='manageButton'>Manage Properties</a>
+                        <a href="dashboard/news" class='manageButton'>Manage News</a>
+                        <a href="dashboard/users" class='manageButton'>Manage Users</a>
+                    </div>
+
+                </div>
+
+                <div class="mt-2">
+                    <h2>Relevant information.</h2>
+                </div>
+
+                <div class="contenedorInfoTotal">
+                    <div class="contenedorInfo">
+                        <strong>Total Orders:</strong> {{ $totalOrders }}
+                    </div>
+                    <div class="contenedorInfo">
+                        <strong>Total Revenue:</strong> ${{ number_format($totalRevenue, 2) }}
+                    </div>
+                    <div class="contenedorInfo">
+                        <strong>Total Users:</strong> {{ $totalUsers }}
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <div class="container">
     <h1>Create News</h1>
 
-    <form action="{{ route('dashboard.news.store') }}" method="post" enctype="multipart/form-data">
+    <form action="/dashboard/news" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
@@ -14,12 +14,12 @@
 
         <div class="mb-3">
             <label for="subtitle" class="form-label">Subtitle</label>
-            <textarea class="form-control" id="subtitle" name="subtitle" rows="4" required></textarea>
+            <input class="form-control" id="subtitle" name="subtitle" rows="4" required/>
         </div>
 
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
-            <input type="text" class="form-control" id="body" name="body" required>
+            <textarea type="text" class="form-control" id="body" name="body" required></textarea>
         </div>
 
         <div class="mb-3">
@@ -28,8 +28,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="image_path" class="form-label">Image Path</label>
-            <input type="text" class="form-control" id="image_path" name="image_path" required>
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category" name="category" required>
         </div>
 
         <div class="mb-3">

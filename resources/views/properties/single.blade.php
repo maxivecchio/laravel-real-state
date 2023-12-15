@@ -51,27 +51,32 @@
                <span>sqm: {{ number_format($property->size) }}</span>
                  <span class="d-flex align-items-center">
                      <span class="icon-bed me-2"></span>
-                     <span class="caption">{{ $property->bedroom }}</span>
+                     <span class="caption">{{ $property->characteristics->bedroom }}</span>
                  </span>
                  <span class="d-flex align-items-center">
                      <span class="icon-bath me-2"></span>
-                     <span class="caption">{{ $property->bathroom }}</span>
+                     <span class="caption">{{ $property->characteristics->bathroom }}</span>
                  </span>
                  <span class="d-flex align-items-center">
                      <span class="fa-solid fa-warehouse me-2"></span>
-                     <span class="caption">{{ $property->garage }}</span>
+                     <span class="caption">{{ $property->characteristics->garage }}</span>
                  </span>
                  <span class="d-flex align-items-center">
                      <span class="fa-solid fa-stairs me-2"></span>
-                     <span class="caption">{{ $property->floors }}</span>
+                     <span class="caption">{{ $property->characteristics->floors }}</span>
                  </span>
                  <span class="d-flex align-items-center">
                      <span class="fa-solid fa-kitchen-set me-2"></span>
-                     <span class="caption">{{ $property->floors }}</span>
+                     <span class="caption">{{ $property->characteristics->floors }}</span>
                  </span>
              </div>
-          </div>
+          <form action="/cart" method="POST">
+            @csrf
+            <input type="hidden" name="property_id" value="{{ $property->id }}">
+            <button class="btn btn-primary" type="submit">Agregar al carrito</button>
+          </form>
         </div>
+      </div>
       </div>
     </div>
 

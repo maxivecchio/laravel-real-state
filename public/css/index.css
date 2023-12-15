@@ -48,3 +48,7 @@
 .actionsNewsDashboard{
     margin-bottom: 80px;
 }
+
+.ContenedorCarrito{
+    min-height: 90vh;
+}

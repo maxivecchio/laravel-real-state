@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Edit Property</h1>
 
-        <form method="POST" action="{{ route('dashboard.properties.update', $property) }}" enctype="multipart/form-data">
+        <form method="POST" action="/dashboard/properties/{{ $property->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -18,37 +18,37 @@
 
             <div class="mb-3">
                 <label for="bedroom" class="form-label">Bedrooms</label>
-                <input type="number" class="form-control" id="bedroom" name="bedroom" value="{{ $property->bedroom }}"
+                <input type="number" class="form-control" id="bedroom" name="bedroom" value="{{ $property->characteristics->bedroom }}"
                     required>
             </div>
 
             <div class="mb-3">
                 <label for="bathroom" class="form-label">Bathrooms</label>
-                <input type="number" class="form-control" id="bathroom" name="bathroom" value="{{ $property->bathroom }}"
+                <input type="number" class="form-control" id="bathroom" name="bathroom" value="{{ $property->characteristics->bathroom }}"
                     required>
             </div>
 
             <div class="mb-3">
                 <label for="kitchen" class="form-label">Kitchens</label>
-                <input type="number" class="form-control" id="kitchen" name="kitchen" value="{{ $property->kitchen }}"
+                <input type="number" class="form-control" id="kitchen" name="kitchen" value="{{ $property->characteristics->kitchen }}"
                     required>
             </div>
 
             <div class="mb-3">
                 <label for="office" class="form-label">Offices</label>
-                <input type="number" class="form-control" id="office" name="office" value="{{ $property->office }}"
+                <input type="number" class="form-control" id="office" name="office" value="{{ $property->characteristics->office }}"
                     required>
             </div>
 
             <div class="mb-3">
                 <label for="garage" class="form-label">Garages</label>
-                <input type="number" class="form-control" id="garage" name="garage" value="{{ $property->garage }}"
+                <input type="number" class="form-control" id="garage" name="garage" value="{{ $property->characteristics->garage }}"
                     required>
             </div>
 
             <div class="mb-3">
                 <label for="floors" class="form-label">Floors</label>
-                <input type="number" class="form-control" id="floors" name="floors" value="{{ $property->floors }}"
+                <input type="number" class="form-control" id="floors" name="floors" value="{{ $property->characteristics->floors }}"
                     required>
             </div>
 
@@ -96,12 +96,6 @@
                 <label for="size" class="form-label">Size (sqm)</label>
                 <input type="number" class="form-control" id="size" name="size" value="{{ $property->size }}"
                     required>
-            </div>
-
-            <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <img src="{{ $property->image_path }}" class='d-block w-25' alt="">
-                <input type="file" class="form-control border-0 mt-3" id="image" name="image">
             </div>
 
             <button type="submit" class="btn btn-primary">Update Property</button>
