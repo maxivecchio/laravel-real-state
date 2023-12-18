@@ -1,20 +1,15 @@
 [2023-12-13]
+Administradores pueden ver los usuarios registrados.
+Vista de carrito y checkout funcional.
 
-Hice que los administradores puedan ver todos los usuarios registrados.
-Hice la vista de carrito y sus respectivas funcionalidades.
-Hice la vista de ordenes tanto del usuario como del admin.
-Hice la vista de perfil y su opcion de editar (junto a su vista).
+[2023-12-15]
+Vista de Ordenes (user & admin).
 
+[2023-12-16]
+Vista de perfil y edición de datos.
 
+[2023-12-17]
+Arreglos menores.
 
-//
-
-[2023-12-06]
-Hice que los administradores puedan ver todos los usuarios registrados.
-Hice la vista de carrito y sus respectivas funcionalidades.
-Hice la vista de ordenes tanto del usuario como del admin.
-Hice la vista de perfil y su opcion de editar (junto a su vista).
-[2023-12-11]
-Hice la parte informativa del dashboar.
-Hice la validacion del html.
-Hice la vista de favoritos.
+[2023-12-18]
+Validación HTML.
