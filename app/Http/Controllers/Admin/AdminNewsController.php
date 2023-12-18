@@ -34,13 +34,15 @@ class AdminNewsController extends Controller
             'author' => $request->input('author'),
             'category' => $request->input('category'),
             'display' => $request->input('display'),
-            'image_path' => 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg',
+            'image_path' => $request->has('image_path') && !empty($request->input('image_path')) ? $request->input('image_path') : 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg',
         ];
+    
         $news = new News($validatedData);
         $news->save();
-
+    
         return redirect('/dashboard/news');
     }
+    
 
     /**
      * Display the specified resource.

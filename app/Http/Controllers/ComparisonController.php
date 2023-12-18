@@ -38,12 +38,11 @@ class ComparisonController extends Controller
     {
         if (Auth::check()) {
             $request->validate([
-                'property1_id' => 'required|exists:properties,id',
-                'property2_id' => 'exists:properties,id|different:property1_id',
+                'property1_id' => 'exists:properties,id',
             ]);
             $existingComparison = Comparison::where('user_id', auth()->id())->latest()->first();
             if ($existingComparison && is_null($existingComparison->property2_id)) {
-                $existingComparison->update(['property2_id' => $request->property2_id]);
+                $existingComparison->update(['property2_id' => $request->property1_id]);
                 return redirect('/comparisons');
             } else {
                 Comparison::create([

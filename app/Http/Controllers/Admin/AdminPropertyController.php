@@ -34,7 +34,7 @@ class AdminPropertyController extends Controller
             'address' => $request->input('address'),
             'zipcode' => $request->input('zipcode'),
             'size' => $request->input('size'),
-            'image_path' => 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg',
+            'image_path' => $request->has('image_path') && !empty($request->input('image_path')) ? $request->input('image_path') : 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg',
         ];
 
         $property = Property::create($validatedData); 

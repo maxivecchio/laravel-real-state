@@ -1,54 +1,92 @@
 .marginTop {
-    margin-top: 140px;
+  margin-top: 140px;
 }
-
 
 /* Styles */
 
-.manageButton, .editPropertyButton, .deletePropertyButton, .createPropertyButton{
-    transition: all ease .3s;
+.manageButton,
+.editPropertyButton,
+.deletePropertyButton,
+.createPropertyButton {
+  transition: all ease 0.3s;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #005555;
+  text-align: center;
+  color: white;
+  /* display: block; */
+  margin-bottom: 10px;
+}
+.manageButton:hover,
+.editPropertyButton:hover {
+  background-color: #008080;
+  color: white;
+}
+.createPropertyButton {
+  margin: 30px 0;
+}
+.editPropertyButton,
+.deletePropertyButton,
+.createPropertyButton {
+  padding: 8px;
+  height: auto;
+  outline: 0;
+}
+.deletePropertyButton,
+.createPropertyButton {
+  border: 2px solid #005555;
+  background-color: transparent;
+  color: #005555;
+  box-sizing: border-box;
+}
+.deletePropertyButton:hover,
+.createPropertyButton:hover {
+  border: 2px solid #008080;
+  background-color: transparent;
+  color: #008080;
+  box-sizing: border-box;
+}
+
+.actionsNewsDashboard {
+  margin-bottom: 80px;
+}
+
+.ContenedorCarrito {
+  min-height: 90vh;
+}
+
+.dashboardCard {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboardCard p {
+  font-size: 1rem;
+  margin: 0;
+}
+.dashboardCard span {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+@media (width < 576px) {
+  .dashboardCard {
     width: 100%;
-    height: 50px;
-    align-items: center;
     display: flex;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #005555;
-    text-align: center;
-    color: white;
-    /* display: block; */
-    margin-bottom: 10px;
-}
-.manageButton:hover, .editPropertyButton:hover{
-    background-color: #008080;
-    color: white;
-}
-.createPropertyButton{
-    margin: 30px 0;
-}
-.editPropertyButton, .deletePropertyButton, .createPropertyButton{
-    padding: 8px;
-    height: auto;
-    outline: 0;
-}
-.deletePropertyButton, .createPropertyButton{
-    border: 2px solid #005555;
-    background-color: transparent;
-    color: #005555;
-    box-sizing: border-box;    
-}
-.deletePropertyButton:hover, .createPropertyButton:hover{
-    border: 2px solid #008080;
-    background-color: transparent;
-    color: #008080;
-    box-sizing: border-box;    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
-.actionsNewsDashboard{
-    margin-bottom: 80px;
-}
 
-.ContenedorCarrito{
-    min-height: 90vh;
+.totalCart {
+  font-size: 1.25rem;
+  font-weight: bold;
 }

@@ -2,16 +2,16 @@
 
 @section('content')
     <div class="container ContenedorCarrito">
-        <h1 class="mx-3">Órdenes del Usuario: {{ $user->name }}</h1>
+        <h1 class="mx-3">Orders: {{ $user->email }}</h1>
 
         <div class="table-responsive mx-3">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>ID de Orden</th>
-                        <th>Fecha de Creación</th>
-                        <th>Propiedades</th>
-                        <th>Precio Total</th>
+                        <th>Order Id</th>
+                        <th>Date</th>
+                        <th>Properties</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,8 +21,8 @@
                             <td>{{ $order->created_at }}</td>
                             <td>
                                 <ul>
-                                    @foreach ($order->products as $product)
-                                        <li>{{ $product->address }} (${{ $product->price }} USD.)</li>
+                                    @foreach ($order->products as $property)
+                                        <li>{{ $property->address }} (${{ $property->price }} USD.)</li>
                                     @endforeach
                                 </ul>
                             </td>
@@ -30,7 +30,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4">No hay órdenes para este usuario.</td>
+                            <td colspan="4">No orders found.</td>
                         </tr>
                     @endforelse
                 </tbody>

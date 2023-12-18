@@ -83,6 +83,11 @@
                 <input type="number" class="form-control" id="size" name="size" required>
             </div>
 
+            <div class="mb-3">
+                <label for="image_path" class="form-label">Main Image Source (optional)</label>
+                <input type="text" class="form-control" id="image_path" name="image_path" >
+            </div>
+
             <button type="submit" class="btn btn-primary">Add Property</button>
         </form>
     </div>

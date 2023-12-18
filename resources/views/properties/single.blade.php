@@ -42,7 +42,7 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-lg-7">
-                <img src="{{$property->image_path}}" alt="Image" class="img-fluid" />
+                <img src="{{$property->image_path}}" alt="Image" class="img-fluid">
           </div>
           <div class="col-lg-4">
             <h2 class="heading text-primary">{{$property->address}}</h2>

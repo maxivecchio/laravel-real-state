@@ -98,6 +98,11 @@
                     required>
             </div>
 
+            <div class="mb-3">
+                <label for="image_path" class="form-label">Main Image Source (optional)</label>
+                <input type="text" class="form-control" id="image_path" name="image_path" value="{{ $property->image_path }}" >
+            </div>
+
             <button type="submit" class="btn btn-primary">Update Property</button>
         </form>
     </div>

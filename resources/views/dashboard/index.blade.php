@@ -15,7 +15,7 @@
             <div class="col-md-8">
 
                 <div class="mt-2">
-                    <h2>Welcome to dashboard.</h2>
+                    <h2>Welcome to the Admin dashboard.</h2>
                 </div>
 
                 <div class="card">
@@ -31,24 +31,21 @@
                         <a href="dashboard/news" class='manageButton'>Manage News</a>
                         <a href="dashboard/users" class='manageButton'>Manage Users</a>
                     </div>
-
                 </div>
 
                 <div class="mt-2">
-                    <h2>Relevant information.</h2>
+                    <h2>Customers Analytics.</h2>
                 </div>
 
-                <div class="contenedorInfoTotal">
-                    <div class="contenedorInfo">
-                        <strong>Total Orders:</strong> {{ $totalOrders }}
-                    </div>
-                    <div class="contenedorInfo">
-                        <strong>Total Revenue:</strong> ${{ number_format($totalRevenue, 2) }}
-                    </div>
-                    <div class="contenedorInfo">
-                        <strong>Total Users:</strong> {{ $totalUsers }}
+                <div class="card">
+                    <div class="card-header">Life-time data</div>
+                    <div class="card-body d-block gap-4 d-sm-flex justify-content-around">
+                        <div class="dashboardCard"><p>Total Orders:</p><span>{{ $totalOrders }}</span></div>
+                        <div class="dashboardCard"><p>Total Revenue:</p><span>${{ number_format($totalRevenue, 2) }}</span></div>
+                        <div class="dashboardCard"><p>Total Users:</p><span>{{ $totalUsers }}</span></div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

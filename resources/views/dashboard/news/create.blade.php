@@ -14,12 +14,12 @@
 
         <div class="mb-3">
             <label for="subtitle" class="form-label">Subtitle</label>
-            <input class="form-control" id="subtitle" name="subtitle" rows="4" required/>
+            <input type="text" class="form-control" id="subtitle" name="subtitle" required>
         </div>
 
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
-            <textarea type="text" class="form-control" id="body" name="body" required></textarea>
+            <textarea class="form-control" id="body" name="body" required></textarea>
         </div>
 
         <div class="mb-3">
@@ -38,6 +38,11 @@
                 <option value="1">Yes</option>
                 <option value="0">No</option>
             </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="image_path" class="form-label">Main Image Source (optional)</label>
+            <input type="text" class="form-control" id="image_path" name="image_path">
         </div>
 
         <button type="submit" class="btn btn-primary">Add News</button>

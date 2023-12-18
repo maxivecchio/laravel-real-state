@@ -4,12 +4,12 @@
 
 <main>
 
-    <section class="intro-single">
+    <div class="intro-single">
         <div class="container">
             <div class="row">
             <div class="col-md-12 col-lg-8">
                 <div class="title-single-box">
-                <h1 class="title-single">{{$news->title}}</h1>
+                <h2 class="title-single">{{$news->title}}</h2>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
@@ -26,10 +26,10 @@
             </div>
             </div>
         </div>
-    </section>
+    </div>
 
   
-        <section class="news-single nav-arrow-b">
+        <div class="news-single nav-arrow-b">
             <div class="container">
                 <div class="row">
                 <div class="col-sm-12">
@@ -90,7 +90,7 @@
                 
                 </div>
             </div>
-        </section>
+        </div>
 
 </main>
 

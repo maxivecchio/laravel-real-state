@@ -66,33 +66,33 @@
                     </tr>
                     <tr>
                         <th>Kitchens</th>
-                        <td>{{ $comparison->property1->kitchen }}</td>
-                        <td>{{ $comparison->property2->kitchen }}</td>
+                        <td>{{ $comparison->property1->characteristics->kitchen }}</td>
+                        <td>{{ $comparison->property2->characteristics->kitchen }}</td>
                     </tr>
                     <tr>
                         <th>Bedrooms</th>
-                        <td>{{ $comparison->property1->bedroom }}</td>
-                        <td>{{ $comparison->property2->bedroom }}</td>
+                        <td>{{ $comparison->property1->characteristics->bedroom }}</td>
+                        <td>{{ $comparison->property2->characteristics->bedroom }}</td>
                     </tr>
                     <tr>
                         <th>Bathrooms</th>
-                        <td>{{ $comparison->property1->bathroom }}</td>
-                        <td>{{ $comparison->property2->bathroom }}</td>
+                        <td>{{ $comparison->property1->characteristics->bathroom }}</td>
+                        <td>{{ $comparison->property2->characteristics->bathroom }}</td>
                     </tr>
                     <tr>
                         <th>Offices</th>
-                        <td>{{ $comparison->property1->office }}</td>
-                        <td>{{ $comparison->property2->office }}</td>
+                        <td>{{ $comparison->property1->characteristics->office }}</td>
+                        <td>{{ $comparison->property2->characteristics->office }}</td>
                     </tr>
                     <tr>
                         <th>Garage Capacity</th>
-                        <td>{{ $comparison->property1->garage }}</td>
-                        <td>{{ $comparison->property2->garage }}</td>
+                        <td>{{ $comparison->property1->characteristics->garage }}</td>
+                        <td>{{ $comparison->property2->characteristics->garage }}</td>
                     </tr>
                     <tr>
                         <th>Floors</th>
-                        <td>{{ $comparison->property1->floors }}</td>
-                        <td>{{ $comparison->property2->floors }}</td>
+                        <td>{{ $comparison->property1->characteristics->floors }}</td>
+                        <td>{{ $comparison->property2->characteristics->floors }}</td>
                     </tr>
                     <tr>
                         <th>Size (sqm)</th>

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Untree.co">
     <link rel="icon" type="image/png" href="/images/icon.png">
-    <meta name="description" content="" />
-    <meta name="keywords" content="bootstrap, bootstrap5" />
+    <meta name="description" content="">
+    <meta name="keywords" content="bootstrap, bootstrap5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,12 +51,13 @@
                                     <ul class="dropdown">
                                         <li><a href="/dashboard/properties">Manage Properties</a></li>
                                         <li><a href="/dashboard/news">Manage News</a></li>
+                                        <li><a href="/dashboard/users">Manage Orders</a></li>
                                     </ul>
                                 </li>
                             @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

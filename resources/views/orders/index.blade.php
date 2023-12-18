@@ -8,9 +8,9 @@
             <table class="table table-bordered mt-3">
                 <thead>
                     <tr>
-                        <th>ID de Orden</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,7 +19,7 @@
                             <td>{{ $order->id }}</td>
                             <td>{{ $order->created_at }}</td>
                             <td>
-                                <a href="/orders/{{ $order->id }}" class="btn btn-info">Detalles</a>
+                                <a href="/orders/{{ $order->id }}" class="btn btn-info">Expand Details</a>
                             </td>
                         </tr>
                     @endforeach
