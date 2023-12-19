@@ -34,10 +34,10 @@ Route::resource('/comparisons', ComparisonController::class);
 Route::resource('/cart', CartController::class)->only(['index', 'store', 'destroy']);
 Route::resource('/orders', OrderController::class)->only(['index', 'show', 'store']);
 Route::resource('/profile', ProfileController::class)->only(['index', 'show', 'update']);
-Route::resource('/dashboard/users', UsersController::class)->only(['index']);
-Route::resource('/dashboard/users/orders', OrderAdminController::class)->only(['index', 'show']);
 Route::middleware(['role:admin'])->group(function () {
     Route::resource('/dashboard', DashboardController::class)->only(['index']);
     Route::resource('/dashboard/news', AdminNewsController::class)->only(['index', "create", "store", "edit", "update", "destroy"]);
     Route::resource('/dashboard/properties', AdminPropertyController::class)->only(['index', "create", "store", "edit", "update", "destroy"]);
+    Route::resource('/dashboard/users', UsersController::class)->only(['index']);
+    Route::resource('/dashboard/users/orders', OrderAdminController::class)->only(['index', 'show']);
 });
