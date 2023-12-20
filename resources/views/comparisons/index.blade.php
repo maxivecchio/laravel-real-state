@@ -5,7 +5,7 @@
 
 <div class="container marginTop" style="min-height: 90vh">
 
-        <a class="breadcrumb-item active" aria-current="page"><a href="/properties"><i class="fa-solid fa-angle-left"></i> Go Back to Properties</a>
+    <a href="/profile" class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-angle-left"></i> Go Back to Profile</a>
     <h1>Comparison History</h1>
 
     @if($comparisons->isEmpty())

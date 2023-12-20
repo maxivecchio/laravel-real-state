@@ -18,9 +18,10 @@
                         class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                         data-aos-delay="200">
                         @csrf
-                        <input type="search" name="city" class="form-control px-4"
+                        <input type="search" name="city" class="form-control px-4 @error('city') is-invalid @enderror"
+                            value="{{ old('city') }}"
                             placeholder="Enter city">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                 </div>
             </div>

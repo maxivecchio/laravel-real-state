@@ -45,7 +45,7 @@ class CartController extends Controller
             $existingCartItem = Cart::where('user_id', $user_id)->where('property_id', $property_id)->first();
 
             if ($existingCartItem) {
-                return redirect('/cart')->with('error', 'Ya tienes este producto en tu carrito.');
+                return redirect('/cart')->with('error', 'This property is already in cart.');
             }
 
             Cart::create([
@@ -91,6 +91,6 @@ class CartController extends Controller
         $cartItem = Cart::findOrFail($id);
         $cartItem->delete();
 
-        return redirect('/cart')->with('success', 'Producto eliminado del carrito exitosamente');
+        return redirect('/cart')->with('success', 'Product removed from cart.');
     }
 }

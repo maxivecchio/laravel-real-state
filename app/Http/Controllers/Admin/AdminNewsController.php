@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\News;
@@ -25,21 +26,12 @@ class AdminNewsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-        $validatedData = [
-            'title' => $request->input('title'),
-            'subtitle' => $request->input('subtitle'),
-            'body' => $request->input('body'),
-            'author' => $request->input('author'),
-            'category' => $request->input('category'),
-            'display' => $request->input('display'),
-            'image_path' => $request->has('image_path') && !empty($request->input('image_path')) ? $request->input('image_path') : 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg',
-        ];
-    
-        $news = new News($validatedData);
+        $data = $request->all();
+        $data['image_path'] = $data['image_path'] ?? 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg';
+        $news = new News($data);
         $news->save();
-    
         return redirect('/dashboard/news');
     }
     
@@ -63,7 +55,7 @@ class AdminNewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, News $news)
+    public function update(NewsRequest $request, News $news)
     {
         $news->update($request->all());
 

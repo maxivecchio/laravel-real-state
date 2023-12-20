@@ -13,3 +13,6 @@ Arreglos menores.
 
 [2023-12-18]
 Validación HTML.
+
+[2023-12-20]
+Validación de todos formularios usando Request: Login, Register, Search, Property (create, edit), News (create, edit).

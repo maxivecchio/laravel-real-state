@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use Illuminate\Http\Request;
 use App\Models\Property;
 
@@ -26,11 +27,14 @@ class SearchController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SearchRequest $request)
     {
+        // El campo 'city' ya está validado por PropertySearchRequest
         $city = $request->input('city');
         $query = Property::where('city', 'like', '%' . $city . '%');
         $properties = $query->get();
+    
+        // Devuelve la vista con los resultados de la búsqueda
         return view('search-results', ['properties' => $properties]);
     }
 

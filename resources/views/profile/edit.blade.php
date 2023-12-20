@@ -2,9 +2,11 @@
 
 @section('content')
     <div class="container ContenedorCarrito marginTop">
-        <h1 class="mx-3">Edit Profile</h1>
+    <a href="/profile" class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-angle-left"></i> Go Back to Profile</a>
+        
+        <h1>Edit Profile</h1>
 
-        <form action="/profile/{{ $profile->id }}" method="post" class="mx-3">
+        <form action="/profile/{{ $profile->id }}" method="post">
             @csrf
             @method('PUT')
 

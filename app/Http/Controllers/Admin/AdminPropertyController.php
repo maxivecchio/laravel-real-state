@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\PropertyRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Property;
@@ -23,33 +24,21 @@ class AdminPropertyController extends Controller
         return view('dashboard.properties.create');
     }
 
-    public function store(Request $request)
+    public function store(PropertyRequest $request)
     {
-        $validatedData = [
-            'type' => $request->input('type'),
-            'price' => $request->input('price'),
-            'country' => $request->input('country'),
-            'state' => $request->input('state'),
-            'city' => $request->input('city'),
-            'address' => $request->input('address'),
-            'zipcode' => $request->input('zipcode'),
-            'size' => $request->input('size'),
-            'image_path' => $request->has('image_path') && !empty($request->input('image_path')) ? $request->input('image_path') : 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg',
+        $data = $request->all();
+        $data['image_path'] = $data['image_path'] ?? 'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg';
+        $characteristicsData = [
+            'bedroom' => $data['bedroom'],
+            'bathroom' => $data['bathroom'],
+            'garage' => $data['garage'],
+            'office' => $data['office'],
+            'floors' => $data['floors'],
+            'kitchen' => $data['kitchen']
         ];
-
-        $property = Property::create($validatedData); 
-        $characteristicsData = $request->validate([
-            'bedroom' => 'required|integer|min:0',
-            'bathroom' => 'required|integer|min:0',
-            'garage' => 'required|integer|min:0',
-            'office' => 'required|integer|min:0',
-            'floors' => 'required|integer|min:0',
-            'kitchen' => 'required|integer|min:0',
-        ]);
-
+        unset($data['bedroom'], $data['bathroom'], $data['garage'], $data['office'], $data['floors'], $data['kitchen']);
+        $property = Property::create($data);
         $property->characteristics()->create($characteristicsData);
-
-        $property->save();
         return redirect("/dashboard/properties");
     }
 
@@ -63,9 +52,20 @@ class AdminPropertyController extends Controller
         return view('dashboard.properties.edit', compact('property'));
     }
 
-    public function update(Request $request, Property $property)
+    public function update(PropertyRequest $request, Property $property)
     {
-        $property->update($request->all());
+        $data = $request->all();
+        $characteristicsData = [
+            'bedroom' => $data['bedroom'],
+            'bathroom' => $data['bathroom'],
+            'garage' => $data['garage'],
+            'office' => $data['office'],
+            'floors' => $data['floors'],
+            'kitchen' => $data['kitchen']
+        ];
+        unset($data['bedroom'], $data['bathroom'], $data['garage'], $data['office'], $data['floors'], $data['kitchen']);
+        $property->update($data);
+        $property->characteristics()->updateOrCreate(['property_id' => $property->id], $characteristicsData);
         return redirect("/dashboard/properties")->with('success', 'Property updated successfully');
     }
 

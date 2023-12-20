@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container ContenedorCarrito marginTop">
+        <a href="/orders" class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-angle-left"></i> Go Back to Orders</a>
         <h1>Order #{{ $order->id }}: ${{ number_format($order->products->sum('price')) }}</h1>
         <p class="totalCart">{{ $order->created_at }}</p>
             @foreach($order->products as $property)
